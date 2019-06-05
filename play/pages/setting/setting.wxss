@@ -1,0 +1,61 @@
+.setting-container {
+  background: white;
+  margin-top: 30rpx;
+}
+
+.setting-image-container {
+  padding: 30rpx;
+  color: #555;
+}
+.setting-image-title {
+    line-height: 100rpx;
+    font-size: 30rpx;
+}
+.setting-image {
+  width: 100rpx;
+  height: 100rpx; 
+}
+
+.setting-input-Item {
+  height: 80rpx;
+  border-bottom: 1rpx solid #E1E1E2;
+    color: #555;
+  font-size: 30rpx;
+}
+.setting-input-title {
+  margin: 20rpx;
+  width: 20%;
+}
+.setting-input {
+  /* border: 1rpx solid #E1E1E2; */
+  width: 80%;
+}
+
+.setting-confirm {
+  width: 90%;
+  margin: 50rpx auto;
+}
+.setting-save, .setting-clear {
+  width: 40%;
+  background: green;
+  text-align: center;
+  margin: 0 10rpx;
+  border-radius: 10rpx;
+  padding: 10rpx 0;
+  font-size: 30rpx;
+  color: white;
+}
+.setting-clear {
+  background: #FA5735;
+}
+.setting-logout {
+  margin: 50rpx auto;
+  width: 90%;
+  background: white;
+  border-radius: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #FA5735;
+  padding: 10rpx 0;
+  box-shadow: 5rpx 5rpx 10rpx white;
+}

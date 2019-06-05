@@ -1,0 +1,37 @@
+.other-publish-nav {
+  border-bottom: 1rpx solid #E1E1E2;
+  padding: 10rpx 0;
+}
+.other-publish-price-container {
+  color: #bbb;
+  width: 40%;
+}
+.other-publish-price-container .other-publish-price {
+  position: relative;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 55rpx;
+  color: #888;
+}
+.other-publish-price .icon-top-sanjiao {
+  position: absolute;
+  font-size: 20rpx;
+  top: -17rpx;
+  right: 88rpx;
+}
+.other-publish-price .icon-xiasanjiao {
+  position: absolute;
+  top: -2rpx;
+  font-size: 20rpx;
+  right: 88rpx;
+}
+.other-publish-price-container .active {
+  color:#38CEFE;
+}
+.other-publish-price-container .picker {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 55rpx;
+  color: #888;
+}

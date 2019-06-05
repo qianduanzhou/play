@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "game-item":"/component/gameItem/gameItem"
+  }
+}

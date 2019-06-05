@@ -1,0 +1,31 @@
+<view class='container column'>
+  <view class='other-user-detail-header'>
+    <image class='other-user-detail-header-background' src="{{publishInfo.gameDetail.picUrl}}"></image>
+    <image class='other-user-detail-header-pic' src="{{publishInfo.gameDetail.picUrl}}"></image>
+    <view class='other-user-detail-header-detail column'>
+      <text class='other-user-detail-header-title'>{{publishInfo.published.game}}</text>
+      <text class='other-user-detail-header-level'>{{publishInfo.published.level}}</text>
+      <text class='other-user-detail-header-orders'>接单{{publishInfo.userInfo.receivedOrders}}次</text>
+      <text class='other-user-detail-header-money'>{{publishInfo.published.moneyNum}}/{{publishInfo.published.moneyType}}</text>
+    </view>
+  </view>
+  <view class='other-user-detail-main'>
+    <view class='other-user-detail-main-header align-center'>
+      <image class='other-user-detail-main-header-pic' src="{{publishInfo.userInfo.userPic}}"></image>
+      <view class='other-user-detail-main-header-userInfo column'>
+        <text class='other-user-detail-main-header-userInfo-nickname'>{{publishInfo.userInfo.nickname}}</text>
+        <text class='other-user-detail-main-header-userInfo-city'>{{publishInfo.userInfo.city}}</text>
+      </view>
+      <view class='other-user-detail-main-header-operator'>
+        <view class='other-user-detail-main-header-operator-collect'>关注</view>
+      </view>
+    </view>
+    <view class='other-user-detail-main-section'>
+      <text>介绍：</text>
+      <text class='other-user-detail-main-section-introduction'>
+        {{publishInfo.published.introduction}}
+      </text>
+    </view>
+  </view>
+  <view class='other-user-detail-order' bindtap='toBuy' data-id='{{publishInfo.published.id}}'>立即下单</view>
+</view>

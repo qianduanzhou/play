@@ -1,0 +1,10 @@
+<view class='container column'>
+  <view class='message-item align-center' wx:for="{{messageList}}">
+    <image class='message-pic' src="{{item.userInfo.userPic}}"></image>
+    <text class='message-user'>{{item.userInfo.nickname}}</text>
+    <text class='message-type'>{{item.type}}</text>了你
+    <text class='message-time'>{{util.formatDateAgo(item.updateTime)}}</text>
+  </view>
+</view>
+
+<wxs src="../../common/util.wxs" module="util"></wxs>

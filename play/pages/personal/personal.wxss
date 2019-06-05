@@ -1,0 +1,112 @@
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
+  margin: 100rpx auto;
+}
+.personal-tip {
+  display: block;
+  margin: 0 auto;
+  color:#888;
+}
+.personal-operate {
+  margin: 50rpx auto;
+}
+.personal-operate-item {
+  width: 200rpx;
+  color: white;
+  background: #38CEFE;
+  padding: 10rpx 30rpx;
+  border-radius: 15rpx;
+  margin: 0 20rpx;
+}
+
+
+
+.noMargin {
+  margin: 0;
+}
+.personal-header {
+  width: 100%;
+  height: 400rpx;
+  background: #38CEFE;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.personal-name-container {
+  display: inline-block;
+  width: 30%;
+
+}
+.personal-name {
+  display: block;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.personal-ID {
+  font-size: 30rpx;
+}
+.personal-userPic {
+  width: 100rpx;
+  height: 100rpx;
+  border: 5rpx solid rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
+  display: inline-block;
+  vertical-align: text-bottom;
+  float: right;
+}
+.personal-message {
+  width: 100%;
+  margin-top: 100rpx;
+}
+.personal-message-item {
+  width: 20%;
+  font-size: 30rpx;
+}
+.personal-message-num {
+  text-align:  center;
+}
+.personal-message-title {
+  text-align:  center;
+  margin-top: 10rpx;
+}
+.personal-other {
+  width: 95%;
+  height: 200rpx;
+  background: white;
+  position: relative;
+  top: -50rpx;
+  margin: 0 auto;
+  border-radius: 20rpx;
+}
+.personal-other-Item {
+  margin-top: 50rpx;
+  width: 33%;
+}
+.personal-other-Item .iconfont{
+  text-align: center;
+  font-size: 60rpx;
+}
+.personal-other-title {
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.icon-fabu {
+  color:#38CEFE;
+}
+.icon-dd_active {
+  color: green;
+}
+.icon-shezhi {
+  color: blue;
+}
+.personal-other-Item .icon-kehu {
+  color: rgb(255,200,0);
+  font-size: 55rpx;
+}
+.personal-other-Item:nth-child(3) .personal-other-title{
+  margin-top: 18rpx;
+}

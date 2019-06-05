@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#38CEFE",
+  "navigationBarTitleText": "更多",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "game-item": "/component/gameItem/gameItem"
+  }
+}

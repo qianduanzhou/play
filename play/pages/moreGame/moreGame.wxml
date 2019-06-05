@@ -1,0 +1,26 @@
+<view class='container column'>
+  <text class='more-game-title'>
+    手游
+  </text>
+  <game-item width="33.333" margin="50" list="{{list1}}"></game-item>
+
+  <text class='more-game-title'>
+    端游
+  </text>
+  <game-item width="33.333" margin="50" list="{{list2}}"></game-item>
+
+  <text class='more-game-title'>
+    娱乐
+  </text>
+  <game-item width="33.333" margin="50" list="{{list3}}"></game-item>
+
+  <text class='more-game-title'>
+    心理咨询
+  </text>
+  <game-item width="33.333" margin="50" list="{{list4}}"></game-item>
+
+  <text class='more-game-title'>
+    文艺生活
+  </text>
+  <game-item width="33.333" margin="50" list="{{list5}}"></game-item>
+</view>

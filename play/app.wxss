@@ -1,0 +1,221 @@
+page {
+  background: rgba(33,33,33,0.1);
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+.justify-spc {
+  display: flex;
+  justify-content: space-between;
+}
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.viewport-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #38CEFE;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1221267 */
+  src: url('//at.alicdn.com/t/font_1221267_0moatb6ynebe.eot');
+  src: url('//at.alicdn.com/t/font_1221267_0moatb6ynebe.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1221267_0moatb6ynebe.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1221267_0moatb6ynebe.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1221267_0moatb6ynebe.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1221267_0moatb6ynebe.svg#iconfont') format('svg');
+}
+
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-kehu:before {
+  content: "\e646"
+}
+.icon-top-sanjiao:before {
+  content: "\e611";
+}
+
+.icon-xiasanjiao:before {
+  content: "\e610";
+}
+.icon-ps:before {
+  content: "\e61d";
+}
+
+.icon-faxian:before {
+  content: "\e644";
+}
+
+.icon-guanzhuliebiao:before {
+  content: "\e62f";
+}
+
+.icon-wangzherongyao:before {
+  content: "\e652";
+}
+
+.icon-daota:before {
+  content: "\e654";
+}
+
+.icon-jiangpai::before {
+  content: "\e685";
+}
+
+.icon-jiaoxing:before {
+  content: "\e655";
+}
+
+.icon-xiaoxi:before {
+  content: "\e613";
+}
+
+.icon-shengyin:before {
+  content: "\e630";
+}
+
+.icon-juediqiusheng:before {
+  content: "\e606";
+}
+
+.icon-xinlizixun:before {
+  content: "\e612";
+}
+
+.icon-shouhui:before {
+  content: "\e658";
+}
+
+.icon-weixin:before {
+  content: "\e65d";
+}
+
+.icon-gengduo:before {
+  content: "\e60b";
+}
+
+.icon-fenlei-shouwangxianfeng:before {
+  content: "\e607";
+}
+
+.icon-icon-test:before {
+  content: "\e61f";
+}
+
+.icon-lol:before {
+  content: "\e629";
+}
+
+.icon-fabu:before {
+  content: "\e651";
+}
+
+.icon-mistake:before {
+  content: "\e60d";
+}
+
+.icon-yemian-copy-copy:before {
+  content: "\e600";
+}
+
+.icon-chuanyuehuoxian:before {
+  content: "\e608";
+}
+
+.icon-find:before {
+  content: "\e601";
+}
+
+.icon-sousuo:before {
+  content: "\e602";
+}
+
+.icon-mine-gray:before {
+  content: "\e603";
+}
+
+.icon-xiaoyouxi:before {
+  content: "\eacb";
+}
+
+.icon-home:before {
+  content: "\e604";
+}
+
+.icon-xiaoxi1:before {
+  content: "\e67c";
+}
+
+.icon-cs:before {
+  content: "\e648";
+}
+
+.icon-dd_active:before {
+  content: "\e60e";
+}
+
+.icon-wode02:before {
+  content: "\e605";
+}
+
+.icon-ufmgp:before {
+  content: "\e609";
+}
+
+.icon-game:before {
+  content: "\e60c";
+}
+
+.icon-QQfeiche:before {
+  content: "\eb65";
+}
+
+.icon-shouyeicon_apex_:before {
+  content: "\e645";
+}
+
+.icon-waiyupeiyin:before {
+  content: "\e61e";
+}
+
+.icon-microphonemusicinstrumentbandsong:before {
+  content: "\e704";
+}
+
+.icon-shezhi:before {
+  content: "\e60f";
+}
+
+.icon-baoleizhiye:before {
+  content: "\e60a";
+}
+
+.icon-qianbao:before {
+  content: "\e657"
+}

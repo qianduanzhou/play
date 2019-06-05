@@ -1,0 +1,5 @@
+.more-game-title {
+  font-size: 30rpx;
+  color:#555;
+  font-weight: bold;
+}

@@ -1,0 +1,28 @@
+<view class='container column'>
+  <view class='published-item' wx:for="{{list}}" bindtap='toDetail' data-name='{{item.game}}' data-userid='{{item.userInfo.id}}'>
+    <image class='published-item-pic' src="{{item.gameDetail.picUrl}}" wx:if="{{imageType == 'game' || imageType == 'order'}}"></image>
+    <image class='published-item-pic' src="{{item.userInfo.userPic}}" wx:if="{{imageType == 'user' || imageType == 'footmark' || imageType == 'custom'}}"></image>
+    <view class='published-item-detail justify-spc'>
+      <view class='published-item-detail-title-container column'>
+      <text class='published-item-detail-title' wx:if="{{imageType == 'game'  || imageType == 'order'}}">{{item.game}}</text>
+      <text class='published-item-detail-title' wx:if="{{imageType == 'user' || imageType == 'footmark' || imageType == 'custom'}}">{{item.userInfo.nickname ? item.userInfo.nickname : item.userInfo.username}}</text>
+      <text class='published-item-detail-title' wx:if="{{imageType == 'custom'}}" style="font-size:30rpx;color:#38CEFE;margin-top:10rpx;">{{item.game}}</text>
+      <text class='published-item-detail-type' wx:if="{{imageType == 'game'}}">{{item.gameType}}</text>
+      <text class='published-item-detail-type' wx:if="{{imageType == 'user'}}">接单量：{{item.userInfo.receivedOrders ? item.userInfo.receivedOrders : 0}}</text>
+      <text class='published-item-detail-type' wx:if="{{imageType == 'order'}}">订单号：{{item.id}}</text>
+      <text class='published-item-detail-money' wx:if="{{imageType != 'order'}}">{{item.moneyType}}{{item.moneyNum}}</text>
+      <text class='published-item-detail-money' wx:if="{{imageType == 'footmark'}}" style="margin-top:40rpx;color:#888;">访问了他的主页</text>
+      <text class='published-item-detail-money' wx:if="{{imageType == 'order' || imageType == 'custom'}}">总额:{{item.money*item.number}}币</text>
+      </view>
+      <view class='published-item-detail-other-container'>
+        <view class='published-item-detail-other-level' wx:if="{{imageType != 'footmark'}}">
+         <icon class='iconfont icon-jiangpai'></icon>{{item.level || item.publishDetail.level}}</view>
+        <text class='published-item-detail-other-publishTime'>{{util.formatDateAgo(item.updateTime)}}
+        </text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<wxs src="../../common/util.wxs" module="util"></wxs>

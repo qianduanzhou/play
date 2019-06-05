@@ -1,0 +1,46 @@
+<view class='container column'>
+  <view class="section">
+    <view class="section__title">选择游戏</view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker justify-center">
+        <view class='publish-game-type publish-game column'>
+          <text class='publish-game-item-title'>类型</text>
+          <text class='publish-game-item-name'>{{multiArray[0][multiIndex[0]]}}</text>
+        </view>
+        <view class='publish-game-type publish-game column'>
+          <text class='publish-game-item-title'>名字</text>
+          <text class='publish-game-item-name'>{{multiArray[1][multiIndex[1]]}}</text>
+        </view>
+        <view class='publish-game-type publish-game column'>
+          <text class='publish-game-item-title'>段位</text>
+          <text class='publish-game-item-name'>{{multiArray[2][multiIndex[2]]}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">选择金额</view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange1" bindcolumnchange="bindMultiPickerColumnChange1" value="{{multiIndex1}}" range="{{multiArray1}}">
+      <view class="picker justify-center">
+      <view class='publish-game-type publish-game column'>
+          <text class='publish-game-item-title'>局/时</text>
+          <text class='publish-game-item-name'>{{multiArray1[0][multiIndex1[0]]}}</text>
+        </view>
+        <view class='publish-game-type publish-game column'>
+          <text class='publish-game-item-title'>金额</text>
+          <text class='publish-game-item-name'>{{multiArray1[1][multiIndex1[1]]}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">介绍</view>
+    <textarea class='publish-detail' placeholder="请输入介绍信息" bindinput='input' value='{{introduction}}' maxlength='30'></textarea>
+    <view bindtap='clear' class='clear' wx:if="{{introduction}}">×</view>
+  </view>
+  <view class='publish-publish' bindtap='publish'>
+    发布
+  </view>
+</view>
+
+

@@ -1,0 +1,29 @@
+.container {
+  margin: 30rpx;
+  border-radius: 20rpx;
+  background: white;
+}
+.message-item {
+  border-bottom: 1rpx solid rgba(33,33,33,0.1);
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #888;
+}
+.message-pic {
+  width: 80rpx;
+  height: 80rpx;
+  background: #ccc;
+  margin-right: 50rpx;
+  border-radius: 10rpx;
+}
+.message-user {
+  color: black;
+}
+.message-type {
+  color: #38CEFE;
+}
+.message-time {
+  flex: 1;
+  text-align: right;
+  font-size: 25rpx;
+}

@@ -1,0 +1,4 @@
+<view>
+  <publish-item list="{{publishedList}}"></publish-item>
+</view>
+<view class='viewport-center' wx:if="{{publishedList.length == 0}}">未发布任何游戏^_^</view>

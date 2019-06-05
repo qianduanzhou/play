@@ -1,0 +1,45 @@
+<view class='container column'>
+  <view class='buy-header align-center'>
+    <image class='buy-header-pic' src="{{detail.userInfo.userPic}}"></image>
+    <view class='buy-header-detail'>
+      <text class='buy-header-detail-name'>{{detail.userInfo.nickname}}</text>
+      <text class='buy-header-detail-money'>
+        {{detail.publishDetail.moneyNum}}/{{detail.publishDetail.moneyType}}
+      </text>
+    </view>
+  </view>
+  <view class='buy-main'>
+    <view class='buy-main-item justify-spc'>
+        <text class='buy-main-item-title'>购买游戏</text>
+        <text class='buy-main-item-game'>{{detail.publishDetail.game}}</text>
+    </view>
+    <view class='buy-main-item justify-spc'>
+      <text class='buy-main-item-title'>服务时间</text>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view class="picker">
+          今天:{{time}}
+        </view>
+      </picker>
+    </view>
+    <view class='buy-main-item justify-spc'>
+        <text class='buy-main-item-title'>购买数量</text>
+        <input class='buy-main-item-input' type='number' value='{{number}}' bindinput='numberInput'></input>
+    </view>
+    <view class='buy-main-item justify-end'>
+        <text class='buy-main-item-num'>数量：{{number}}</text>
+        <view class='buy-main-item-all'>小计：
+          <text class='buy-footer-all-money'>{{number*money}}.00币</text>
+        </view>
+    </view>
+    <view class='buy-main-item justify-spc'>
+        <text class='buy-main-item-title'>备注</text>
+        <input class='buy-main-item-input' type='text' placeholder='请输入备注内容，不超过50字' maxlength='50' bindinput='textInput' value='{{remarks}}'></input>
+    </view>
+  </view>
+  <view class='buy-footer justify-spc'>
+    <view class='buy-footer-all'>总额：
+      <text class='buy-footer-all-money'>{{number*money}}.00</text>币
+    </view>
+    <view class='buy-footer-buy' bindtap='buy'>提交订单</view>
+  </view>
+</view>

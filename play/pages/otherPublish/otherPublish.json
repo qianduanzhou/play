@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#38CEFE",
+  "navigationBarTitleText": "他人发布",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "publish-item": "/component/publishItem/publishItem"
+  }
+}

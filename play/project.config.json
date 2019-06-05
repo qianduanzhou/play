@@ -1,0 +1,153 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.1",
+	"appid": "wx04972a9c0769de54",
+	"projectname": "%E4%B8%80%E8%B5%B7%E7%8E%A9",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 14,
+			"list": [
+				{
+					"id": -1,
+					"name": "moreGame",
+					"pathName": "pages/moreGame/moreGame",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "person",
+					"pathName": "pages/personal/personal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "register",
+					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "setting",
+					"pathName": "pages/setting/setting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "publish",
+					"pathName": "pages/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "published",
+					"pathName": "pages/published/published",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "publishedDetail",
+					"pathName": "pages/publishedDetail/publishedDetail",
+					"query": "name=王者荣耀",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "otherPublish",
+					"pathName": "pages/otherPublish/otherPublish",
+					"query": "name=王者荣耀",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "otherUserDetail",
+					"pathName": "pages/otherUserDetail/otherUserDetail",
+					"query": "game=王者荣耀&userId=20035",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "/buy",
+					"pathName": "pages/buy/buy",
+					"query": "id=13",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orderList",
+					"pathName": "pages/orderList/orderList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "footDetail",
+					"pathName": "pages/footDetail/footDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "customList",
+					"pathName": "pages/customList/customList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "message",
+					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

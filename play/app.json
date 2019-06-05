@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/found/found",
+    "pages/message/message",
+    "pages/personal/personal",
+    "pages/moreGame/moreGame",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/setting/setting",
+    "pages/publish/publish",
+    "pages/otherPublish/otherPublish",
+    "pages/published/published",
+    "pages/publishedDetail/publishedDetail",
+    "pages/otherUserDetail/otherUserDetail",
+    "pages/buy/buy",
+    "pages/orderList/orderList",
+    "pages/customList/customList",
+    "pages/footDetail/footDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#38CEFE",
+    "navigationBarTitleText": "一起玩",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/index-checked.png",
+        "iconPath": "images/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/found-checked.png",
+        "iconPath": "images/found.png",
+        "pagePath": "pages/found/found",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "images/message-checked.png",
+        "iconPath": "images/message.png",
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "images/personal-checked.png",
+        "iconPath": "images/personal.png",
+        "pagePath": "pages/personal/personal",
+        "text": "我的"
+      }
+    ]
+  }
+}

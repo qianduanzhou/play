@@ -1,0 +1,43 @@
+.container {
+  margin: 30rpx;
+}
+.user-pic {
+  width: 100rpx;
+  height: 100rpx;
+}
+.register-title {
+  margin: 30rpx 0 50rpx 0;
+}
+.user-input {
+  border-bottom: 1rpx solid #E1E1E2;
+  margin: 0 0 20rpx 0;
+  font-size: 30rpx;
+}
+.register-input-container {
+  position: relative;
+}
+.register-input-container .user-clear {
+  position: absolute;
+  padding: 10rpx;
+  display: block;
+  z-index: 99;
+  right: 30rpx;
+  top: -10rpx;
+}
+.register-input-container .pass-clear {
+  position: absolute;
+  display: block;
+  padding: 10rpx;
+  z-index: 99;
+  right: 30rpx;
+  top: -10rpx;
+}
+.register {
+  width: 30%;
+  margin: 50rpx auto 0 auto;
+  padding: 10rpx 0;
+  text-align: center;
+  background: #38CEFE;
+  color: white;
+  border-radius: 15rpx
+}

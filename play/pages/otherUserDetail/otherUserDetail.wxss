@@ -1,0 +1,93 @@
+.other-user-detail-header {
+  position: relative;
+  display: flex;
+}
+.other-user-detail-header-background {
+  position: absolute;
+  filter: blur(50rpx);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.other-user-detail-header-pic {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 30rpx;
+}
+.other-user-detail-header-detail {
+  margin: 25rpx 0;
+  color: rgba(255,255,255,0.8);
+}
+.other-user-detail-header-title {
+  font-weight: bold;
+}
+.other-user-detail-header-level {
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color: rgb(255,200,0);
+}
+.other-user-detail-header-orders {
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  color: powderblue;
+}
+.other-user-detail-header-money {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+}
+.other-user-detail-main {
+  background: white;
+  margin-top: 40rpx;
+}
+.other-user-detail-main-header {
+  border-bottom: 1rpx solid #E1E1E2;
+}
+.other-user-detail-main-header-pic {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 30rpx;
+}
+.other-user-detail-main-header-userInfo {
+
+}
+.other-user-detail-main-header-userInfo-nickname {
+  color: #333;
+  font-size: 35rpx;
+}
+.other-user-detail-main-header-userInfo-city {
+  font-size: 25rpx;
+  margin-top: 20rpx;
+  color:#888;
+}
+.other-user-detail-main-header-operator-collect {
+  margin-left: 350rpx;
+  background: #38CEFE;
+  border-radius: 30rpx;
+  color: white;
+  padding: 10rpx 30rpx;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
+}
+.other-user-detail-main-section {
+  margin:30rpx;
+  color: #333;
+  font-weight:bold;
+}
+.other-user-detail-main-section-introduction {
+  font-size: 35rpx;
+  color: #888;
+  font-weight: normal;
+  display: block;
+}
+.other-user-detail-order {
+  position: fixed;
+  bottom: 0;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #38CEFE;
+  color: white;
+  border-radius: 30rpx;
+  padding: 10rpx 0;
+}

@@ -1,0 +1,36 @@
+<view class='container column'>
+  <image class='publishedDetail-pic' src='{{publishedDetail.gameDetail.picUrl}}'></image>
+  <text class='publishedDetail-pic-name'>{{publishedDetail.game}}</text>
+  <view class="section">
+  <view class="section__title">选择段位</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{level}}">
+      <view class="picker justify-center">
+        <text class='level'>{{level[index]}}</text> 
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">选择金额</view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker justify-center">
+      <view class='publish-game-type publish-game column'>
+          <text class='publish-game-item-title'>局/时</text>
+          <text class='publish-game-item-name'>{{multiArray[0][multiIndex[0]]}}</text>
+        </view>
+        <view class='publish-game-type publish-game column'>
+          <text class='publish-game-item-title'>金额</text>
+          <text class='publish-game-item-name'>{{multiArray[1][multiIndex[1]]}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">介绍</view>
+    <textarea class='publish-detail' placeholder="请输入介绍信息" bindinput='input' value='{{introduction}}' maxlength='30'></textarea>
+    <view bindtap='clear' class='clear' wx:if="{{introduction}}">×</view>
+  </view>
+  <view class='publishedDetail-operator justify-spc'>
+    <view class='publishedDetail-operator-change' bindtap='change'>修改</view>
+    <view class='publishedDetail-operator-cancel' bindtap='del'>删除</view>
+  </view>
+</view>

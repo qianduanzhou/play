@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container column">
+  <view class='search-container'>
+    <icon class='iconfont icon-sousuo'></icon>
+    <input class='input' placeholder='搜索品类，昵称，ID'></input>
+    <view class='publish-container' bindtap='publish'>
+      <icon class='iconfont icon-fabu'></icon>
+      <text class='pushlish'>发布</text>
+    </view>
+  </view>
+  <game-item width="20" margin="10" list="{{hotGameList}}">
+    <view class='game-item column all-center' style='width:20%' margin="10" bindtap='toMoreGame'>
+    <image class='game-pic' src="/images/more.png"></image>
+    <text class='game-name'>更多</text>
+  </view>
+  </game-item>
+</view>

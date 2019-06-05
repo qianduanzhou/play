@@ -1,0 +1,54 @@
+<view class='container column' wx:if="{{!userInfo.id}}">
+  <image class='logo' src="/images/game.png"></image>
+  <text class='personal-tip'>当前未登录，请选择</text>
+  <view class='personal-operate'>
+    <text class='personal-operate-item' bindtap='login'>登录</text>
+    <text class='personal-operate-item' bindtap='register'>注册</text>
+  </view>
+</view>
+
+<view class='container column noMargin' wx:if="{{userInfo.id}}">
+  <view class='personal-header'>
+    <view class='personal-name-container'>
+      <text class='personal-name'>{{userInfo.nickname}}</text>
+      <text class='personal-ID'>ID {{userInfo.id}}</text>
+    </view>
+    <image class='personal-userPic' src='{{userInfo.userPic}}'></image>
+    <view class='personal-message justify-spc'>
+      <view class='personal-message-item column'>
+        <text class='personal-message-num'>{{userInfo.concern}}</text>
+        <text class='personal-message-title'>关注</text>
+      </view>
+      <view class='personal-message-item column'>
+        <text class='personal-message-num'>{{userInfo.fans}}</text>
+        <text class='personal-message-title'>粉丝</text>
+      </view>
+      <view class='personal-message-item column'>
+        <text class='personal-message-num'>{{userInfo.money}}</text>
+        <text class='personal-message-title'>余额</text>
+      </view>
+      <view class='personal-message-item column' bindtap='tofootDetail'>
+        <text class='personal-message-num'>{{userInfo.footmark}}</text>
+        <text class='personal-message-title'>浏览足迹</text>
+      </view>
+    </view>
+  </view>
+  <view class='personal-other justify-spc'>
+    <view class='personal-other-Item column' bindtap='toPublished'>
+      <icon class='iconfont icon-fabu'></icon>
+      <text class='personal-other-title'>发布中心</text>
+    </view>
+    <view class='personal-other-Item column' bindtap='toOrderList'>
+      <icon class='iconfont icon-dd_active'></icon>
+      <text class='personal-other-title'>订单中心</text>
+    </view>
+    <view class='personal-other-Item column' bindtap='tocustomList'>
+      <icon class='iconfont icon-kehu'></icon>
+      <text class='personal-other-title'>客户订单</text>
+    </view>
+    <view class='personal-other-Item column' bindtap='toSetting'>
+      <icon class='iconfont icon-shezhi'></icon>
+      <text class='personal-other-title'>设置中心</text>
+    </view>
+  </view>
+</view>

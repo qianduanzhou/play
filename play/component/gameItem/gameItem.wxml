@@ -1,0 +1,8 @@
+<view class='game-container'>
+  <view class='game-item column all-center' style='width:{{width}}%;margin:{{margin}}rpx 0rpx' wx:for="{{list}}" bindtap='toOtherPublish' data-name="{{item.name}}">
+    <image class='game-pic' src="{{item.picUrl}}"></image>
+    <text class='game-name'>{{item.name}}</text>
+  </view>
+  <slot></slot>
+</view>
+

@@ -1,0 +1,17 @@
+<view class="container column">
+  <view class='other-publish-nav justify-center'>
+    <view class='other-publish-price-container' bindtap='changeMode'>
+      <view class='other-publish-price'>价格
+        <icon class='iconfont icon-top-sanjiao {{checked == "up" ? "active" : " "}}'></icon>
+        <icon class='iconfont icon-xiasanjiao {{checked == "down" ? "active" : " "}}'></icon>
+      </view>
+    </view>
+    <view class='other-publish-price-container'>
+      <picker class='picker' bindchange="bindPickerChange" value="{{index}}" range="{{level}}">
+      段位
+    </picker>
+    </view>
+  </view>
+  <publish-item list="{{publishList}}" imageType="user"></publish-item>
+  <view class='viewport-center' wx:if="{{publishList.length == 0}}">该类型暂无发布^_^</view>
+</view>

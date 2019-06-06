@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#38CEFE",
+  "navigationBarTitleText": "粉丝",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "person-item": "/component/personItem/personItem"
+  }
+}

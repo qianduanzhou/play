@@ -1,6 +1,6 @@
 <view>
-  <view class='footDetail'>
-    <text class='footDetail-clear' bindtap='clearFootmark' wx:if="{{footList.length > 0}}">清空</text>
+  <view class='footDetail'  wx:if="{{footList.length > 0}}">
+    <text class='footDetail-clear' bindtap='clearFootmark'>清空</text>
   </view>
   <publish-item list="{{footList}}" imageType="footmark"></publish-item>
 </view>

@@ -1,5 +1,5 @@
 <view class='container column'>
-  <view class='header'>
+  <view class='header'  wx:if="{{orderList.length > 0}}">
     <view class='order-list-nav justify-end'>
     <view class='order-list-price-container' bindtap='changeMode'>
       <view class='order-list-price'>日期

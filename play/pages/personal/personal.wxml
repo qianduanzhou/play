@@ -15,11 +15,11 @@
     </view>
     <image class='personal-userPic' src='{{userInfo.userPic}}'></image>
     <view class='personal-message justify-spc'>
-      <view class='personal-message-item column'>
+      <view class='personal-message-item column' bindtap='toConcern'>
         <text class='personal-message-num'>{{userInfo.concern}}</text>
         <text class='personal-message-title'>关注</text>
       </view>
-      <view class='personal-message-item column'>
+      <view class='personal-message-item column' bindtap='toFans'>
         <text class='personal-message-num'>{{userInfo.fans}}</text>
         <text class='personal-message-title'>粉丝</text>
       </view>

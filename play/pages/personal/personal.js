@@ -25,37 +25,47 @@ Page({
   },
   login() {
     wx.navigateTo({
-      url: '/pages/login/login',
+      url: '/pages/login/login'
     })
   },
   register() {
     wx.navigateTo({
-      url: '/pages/register/register',
+      url: '/pages/register/register'
     })
   },
   toSetting() {
     wx.navigateTo({
-      url: '/pages/setting/setting',
+      url: '/pages/setting/setting'
     })
   },
   toPublished() {
     wx.navigateTo({
-      url: '/pages/published/published',
+      url: '/pages/published/published'
     })
   },
   toOrderList() {
     wx.navigateTo({
-      url: '/pages/orderList/orderList',
+      url: '/pages/orderList/orderList'
     })
   },
   tofootDetail() {
     wx.navigateTo({
-      url: '/pages/footDetail/footDetail',
+      url: '/pages/footDetail/footDetail'
     })
   },
   tocustomList() {
     wx.navigateTo({
-      url: '/pages/customList/customList',
+      url: '/pages/customList/customList'
+    })
+  },
+  toConcern() {
+    wx.navigateTo({
+      url: '/pages/concern/concern'
+    })
+  },
+  toFans() {
+    wx.navigateTo({
+      url: '/pages/fans/fans'
     })
   }
 })

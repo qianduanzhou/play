@@ -1,0 +1,54 @@
+.container {
+  border-radius: 10rpx;
+  background: white;
+}
+.personItem-item {
+  border-bottom: 1rpx solid rgba(33,33,33,0.1);
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #888;
+  display: flex;
+}
+.personItem-pic {
+  width: 80rpx;
+  height: 80rpx;
+  background: #ccc;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.personItem-name-container {
+  margin-top: 15rpx;
+  width: 15%;
+}
+.personItem-user {
+  color: #333;
+  margin-top: -20rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.personItem-man {
+  position: relative;
+  font-size: 20rpx;
+  background: #38CEFE;
+  width: 70%;
+  color: white;
+  padding: 3rpx 0;
+  border-radius: 20rpx;
+}
+.personItem-man  iconfont {
+  
+}
+.personItem-man .icon-nan {
+  position: absolute;
+  font-size: 20rpx;
+  top: -23rpx;
+  left: 20rpx;
+}
+.personItem-age {
+  margin-left: 42rpx;
+}
+.personItem-city {
+  flex: 1;
+  text-align: right;
+  font-size: 25rpx;
+}

@@ -48,25 +48,36 @@
   margin: 30rpx;
 }
 .other-user-detail-main-header-userInfo {
-
+  width: 20%;
 }
 .other-user-detail-main-header-userInfo-nickname {
   color: #333;
   font-size: 35rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .other-user-detail-main-header-userInfo-city {
   font-size: 25rpx;
   margin-top: 20rpx;
   color:#888;
 }
+.other-user-detail-main-header-operator {
+  flex: 1;
+}
 .other-user-detail-main-header-operator-collect {
-  margin-left: 350rpx;
+  width: 30%;
+  float: right;
+  margin-right: 20rpx;
   background: #38CEFE;
   border-radius: 30rpx;
   color: white;
   padding: 10rpx 30rpx;
   font-size: 30rpx;
+  text-align: center;
   letter-spacing: 5rpx;
+}
+.concerned {
+  background: rgb(221, 80, 68);
 }
 .other-user-detail-main-section {
   margin:30rpx;

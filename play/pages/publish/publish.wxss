@@ -1,3 +1,6 @@
+.container {
+  margin: 30rpx;
+}
 .section {
   position: relative;
   font-size: 35rpx;

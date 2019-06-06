@@ -1,0 +1,23 @@
+.concern-search-container {
+  position: relative;
+  margin-top: 20rpx;
+}
+.icon-sousuo {
+  position: absolute;
+  left: 60rpx;
+  top: -5rpx;
+}
+.concern-search-input {
+  padding-left: 80rpx;
+  width: 85%;
+  margin: 0 auto;
+  display: block;
+  background: #E1E1E2;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+}
+.concern-title {
+  font-size: 30rpx;
+  margin: 10rpx 30rpx 10rpx 30rpx;
+  color: #888;
+}

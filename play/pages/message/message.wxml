@@ -1,4 +1,7 @@
 <view class='container column'>
+  <view class='message'  wx:if="{{messageList.length > 0}}">
+      <text class='message-clear' bindtap='clearMessage'>清空</text>
+  </view>
   <view class='message-item align-center' wx:for="{{messageList}}">
     <image class='message-pic' src="{{item.userInfo.userPic}}"></image>
     <text class='message-user'>{{item.userInfo.nickname}}</text>
@@ -6,5 +9,5 @@
     <text class='message-time'>{{util.formatDateAgo(item.updateTime)}}</text>
   </view>
 </view>
-
+<view class='viewport-center'  wx:if="{{messageList.length == 0}}">暂无消息o(╥﹏╥)o</view>
 <wxs src="../../common/util.wxs" module="util"></wxs>

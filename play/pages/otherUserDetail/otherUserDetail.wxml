@@ -17,7 +17,8 @@
         <text class='other-user-detail-main-header-userInfo-city'>{{publishInfo.userInfo.city}}</text>
       </view>
       <view class='other-user-detail-main-header-operator'>
-        <view class='other-user-detail-main-header-operator-collect'>关注</view>
+        <view class='other-user-detail-main-header-operator-collect' wx:if="{{!checkConcern}}" bindtap='concern'>关注</view>
+        <view class='other-user-detail-main-header-operator-collect concerned' wx:if="{{checkConcern}}" bindtap='unConcern'>已关注</view>
       </view>
     </view>
     <view class='other-user-detail-main-section'>

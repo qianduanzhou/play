@@ -16,7 +16,9 @@
     "pages/buy/buy",
     "pages/orderList/orderList",
     "pages/customList/customList",
-    "pages/footDetail/footDetail"
+    "pages/footDetail/footDetail",
+    "pages/concern/concern",
+    "pages/fans/fans"
   ],
   "window": {
     "backgroundTextStyle": "light",

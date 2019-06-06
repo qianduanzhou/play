@@ -1,0 +1,9 @@
+<view class='container column'>
+  <view class='fans-search-container'>
+    <icon class='iconfont icon-sousuo'></icon>
+    <input class='fans-search-input' placeholder='搜索好友'></input>
+  </view>
+  <view class='fans-title'>粉丝</view>
+  <person-item list="{{fansList}}"></person-item>
+</view>
+<view class='viewport-center' wx:if="{{fansList.length == 0}}">暂无关注o(╥﹏╥)o</view>

@@ -7,7 +7,6 @@ App({
     this.getStore()
   },
   getStore() {
-    
     wx.getStorage({
       key: 'userInfo',
       success: (res) => {

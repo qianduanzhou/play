@@ -38,7 +38,7 @@ Component({
         }
         let message = {
           userId: app.data.userInfo.id,
-          otherId: e.currentTarget.dataset.userid,
+          enterpriseId: e.currentTarget.dataset.userid,
           type: '访问',
           updateTime:new Date().getTime()
         }

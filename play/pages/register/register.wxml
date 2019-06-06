@@ -2,7 +2,7 @@
   <image class='user-pic' src="/images/game.png"></image>
   <text class='register-title'>欢迎来到一起玩</text>
   <view class='register-input-container'>
-    <input placeholder='账号' type='text' class='username user-input' bindinput='changeUser' value='{{username}}'></input>
+    <input placeholder='账号' type='text' class='username user-input' bindinput='changeUser' value='{{username}}' focus='true'></input>
     <text class='user-clear' wx:if="{{username}}" bindtap='clearUser'>×</text>
   </view>
   <view class='register-input-container'>

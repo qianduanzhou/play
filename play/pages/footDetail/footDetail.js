@@ -30,8 +30,9 @@ Page({
           api.request(api.clearFootmark,{
             userId:app.data.userInfo.id
           },"post").then((res) => {
-            console.log(res)
             this.init()
+            app.checkLogin()
+            app.getStore()
           })
         }
       }

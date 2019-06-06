@@ -20,8 +20,17 @@ let login = 'user/login'
 let wxGetInfo = 'user/wxGetInfo'
 let wxLogin = 'user/wxLogin'
 
+
+let concern = 'concern/concern'
+let unConcern = 'concern/unConcern'
+let checkConcern = 'concern/checkConcern'
+let concernList = 'concern/concernList'
+
+
 let setMessage = 'user/setMessage'
 let getMessage = 'user/getMessage'
+let clearMessage = 'user/clearMessage'
+
 
 let buyDetail = 'order/buyDetail'
 let buy = 'order/buy'
@@ -74,5 +83,10 @@ module.exports = {
   getFootmark,
   clearFootmark,
   setMessage,
-  getMessage
+  getMessage,
+  clearMessage,
+  concern,
+  unConcern,
+  checkConcern,
+  concernList
 }

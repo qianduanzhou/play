@@ -72,7 +72,7 @@ router.post('/setMessage',function (req,res,next) {
 
 //  获取消息
 router.get('/getMessage',function (req,res,next) {
-    operate.searchOne(req.query.userId,"otherId","message").then(async (result) => {
+    operate.searchOne(req.query.userId,"enterpriseId","message").then(async (result) => {
         for(let i = 0; i < result.length; i ++) {
             await operate.searchOne(result[i].userId,"id","user").then((userInfo) => {
                 result[i].userInfo = userInfo[0]
@@ -81,6 +81,16 @@ router.get('/getMessage',function (req,res,next) {
         util.RESJSON(req, res, next, 200, 'success',result)
     })
 })
+
+// 删除全部消息
+router.post('/clearMessage',function (req,res,next) {
+    operate.deleteOne(req.body.userId,"enterpriseId","message").then(() => {
+        util.RESJSON(req, res, next, 200, 'success')
+    })
+})
+
+
+
 
 //  插入一条数据
 function insertOneUser(username,password,nickname,req, res, next) {

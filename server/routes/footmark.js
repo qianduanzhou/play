@@ -37,7 +37,6 @@ router.get('/getFootmark',async function (req,res,next) {
             data[i].publishDetail = result[0]
         })
     }
-    console.log(data)
     util.RESJSON(req, res, next, 200,'success',data)
 })
 
@@ -45,7 +44,9 @@ router.get('/getFootmark',async function (req,res,next) {
 //  清空所有足迹
 router.post('/clear',function (req,res,next) {
     operate.deleteOne(req.body.userId,"userId","footmark").then(() => {
-        util.RESJSON(req, res, next, 200,'success')
+        operate.updateOne(0,"footmark","user",req.body.userId,"id").then(() => {
+            util.RESJSON(req, res, next, 200,'success')
+        })
     })
 })
 

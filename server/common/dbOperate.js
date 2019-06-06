@@ -49,6 +49,7 @@ let updateOne = (data,dataKey,dataTable,condition,condKey) => {
 }
 
 
+
 module.exports = {
     searchOne,
     searchAll,

@@ -30,7 +30,31 @@ let insertOneAll = (data) => {
 let insertOneMessage = (data) => {
     data = util.formatData(data)
     return new Promise((resolve,reject) => {
-        db.query(`insert into message (userId,otherId,type,updateTime) values (?,?,?,?)`,[...data],(err,result,fields) => {
+        db.query(`insert into message (userId,enterpriseId,type,updateTime) values (?,?,?,?)`,[...data],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
+    })
+}
+
+let insertOneConcern = (userId,enterpriseId) => {
+    return new Promise((resolve,reject) => {
+        db.query(`insert into concern (userId,enterpriseId) values (?,?)`,[userId,enterpriseId],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
+    })
+}
+
+let searchConcern = (userId,enterpriseId) => {
+    return new Promise((resolve,reject) => {
+        db.query(`select * from concern where userId=${userId} and enterpriseId=${enterpriseId}`,[],(err,result,fields) => {
             if(err) {
                 reject(err)
             }else {
@@ -43,5 +67,7 @@ let insertOneMessage = (data) => {
 module.exports = {
     insertOneUser,
     insertOneAll,
-    insertOneMessage
+    insertOneMessage,
+    insertOneConcern,
+    searchConcern
 }

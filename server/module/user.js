@@ -64,10 +64,23 @@ let searchConcern = (userId,enterpriseId) => {
     })
 }
 
+let updateOneUser = (data) => {
+    return new Promise((resolve,reject) => {
+        db.query(`update user set nickname='${data.nickname}',password='${data.password}',sex='${data.sex}',age='${data.age}',userPic='${data.userPic}' where id=${data.userId}`,[],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
+    })
+}
+
 module.exports = {
     insertOneUser,
     insertOneAll,
     insertOneMessage,
     insertOneConcern,
-    searchConcern
+    searchConcern,
+    updateOneUser
 }

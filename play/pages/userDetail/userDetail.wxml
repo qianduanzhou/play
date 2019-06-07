@@ -1,0 +1,37 @@
+<view class='container column'>
+  <view class='user-detail-header-pic-container all-center'>
+    <image class='user-detail-header-pic' src="{{userInfo.userPic}}"   mode="aspectFill"></image>
+    <text class='user-detail-header-fans'>{{userInfo.fans}}粉丝</text>
+  </view>
+  <view class='user-detail-main column'>
+    <view class='user-detail-main-header column'>
+      <view class='user-detail-main-header-nameContainer  align-center'>
+        <view class='user-detail-main-header-nameContainer-name'>{{userInfo.nickname}}<icon class='iconfont icon-V'></icon>
+        </view>
+        <view class='user-detail-main-header-nameContainer-operator'>
+          <view class='user-detail-main-header-nameContainer-collect' wx:if="{{!checkConcern}}" bindtap='concern'>关注</view>
+          <view class='user-detail-main-header-nameContainer-collect concerned' wx:if="{{checkConcern}}" bindtap='unConcern'>已关注</view>
+        </view>
+      </view>
+      <text class='user-detail-main-header-city'>{{userInfo.city}}</text>
+    </view>
+    <view class='user-detail-main-main column'>
+      <text class='user-detail-main-main-bigTitle'>资料</text>
+      <text class='user-detail-main-main-title'>账号信息</text>
+      <view class='user-detail-main-main-attest justify-spc'>
+        <view class='user-detail-main-main-attest-item'>
+          <icon class='iconfont icon-V'></icon>
+          <text class='user-detail-main-main-attest-item-text'>官方认证</text>
+        </view>
+        <view class='user-detail-main-main-attest-item'>
+          <icon class='iconfont icon-credentials_icon'></icon>
+          <text class='user-detail-main-main-attest-item-text'>身份认证</text>
+        </view>
+      </view>
+      <text class='user-detail-main-main-title'>个人信息</text>
+      <text class="user-detail-main-main-detail">昵称:  {{userInfo.nickname}}</text>
+      <text class="user-detail-main-main-detail">ID:  {{userInfo.id}}</text>
+      <text class="user-detail-main-main-detail">年龄:  {{userInfo.age}}</text>
+    </view>
+  </view>
+</view>

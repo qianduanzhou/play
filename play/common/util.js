@@ -42,11 +42,12 @@ function getName(data) {
 //  刷新上一个页面的数据
 function fleshPre() {
   var pages = getCurrentPages();//获取页面栈
-  console.log(pages)
+  
   if (pages.length > 1) {
     //上一个页面实例对象
     var prePage = pages[pages.length - 2];
     //调用上一个页面的onLoad,onShow方法
+    console.log(prePage)
     prePage.onLoad()
     prePage.onShow()
   } 

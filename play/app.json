@@ -18,7 +18,9 @@
     "pages/customList/customList",
     "pages/footDetail/footDetail",
     "pages/concern/concern",
-    "pages/fans/fans"
+    "pages/fans/fans",
+    "pages/searchResult/searchResult",
+    "pages/userDetail/userDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

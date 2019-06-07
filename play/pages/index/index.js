@@ -6,7 +6,8 @@ const api = require('../../common/api.js')
 console.log(api)
 Page({
   data: {
-    hotGameList:[]
+    hotGameList:[],
+    keys:""
   },
   onLoad: function () {
     this.getHotGame()
@@ -32,6 +33,16 @@ Page({
   publish() {
     wx.navigateTo({
       url: '../publish/publish',
+    })
+  },
+  input(e) {
+    this.setData({
+      keys:e.detail.value
+    })
+  },
+  toSearch() {
+    wx.navigateTo({
+      url: '/pages/searchResult/searchResult?keys='+this.data.keys
     })
   }
 })

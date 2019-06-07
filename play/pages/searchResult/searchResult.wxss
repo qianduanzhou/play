@@ -1,0 +1,5 @@
+.search-result-title {
+  margin: 10rpx;
+  color: #888;
+  font-size: 30rpx;
+}

@@ -2,7 +2,7 @@
   <view class='setting-container'>
     <view class='setting-image-container justify-spc'>
       <text class='setting-image-title'>头像：</text>
-      <image class='setting-image' src="{{userInfo.userPic}}"></image>
+      <image class='setting-image' src="{{userPic}}" bindtap='chooseImage'></image>
     </view>
     <view class='setting-input-Item align-center'>
       <text class='setting-input-title'>ID：</text>
@@ -14,11 +14,11 @@
     </view>
     <view class='setting-input-Item align-center'>
       <text class='setting-input-title'>昵称：</text>
-      <input type="text" class='setting-input' value='{{userInfo.nickname}}' maxlength="16"></input>
+      <input type="text" class='setting-input' value='{{nickname}}' maxlength="16" bindinput='changName'></input>
     </view>
     <view class='setting-input-Item align-center'>
       <text class='setting-input-title'>密码：</text>
-      <input type="password" class='setting-input' value='{{userInfo.password}}' maxlength="16"></input>
+      <input type="password" class='setting-input' value='{{password}}' maxlength="16" bindinput='changePassword'></input>
     </view>
     <view class='setting-input-Item align-center'>
       <text class='setting-input-title'>性别</text>
@@ -30,11 +30,11 @@
     </view>
     <view class='setting-input-Item align-center'>
       <text class='setting-input-title'>年龄</text>
-      <input type="text" class='setting-input' value='{{userInfo.age}}' maxlength="3"></input>
+      <input type="number" class='setting-input' value='{{age}}' maxlength="3" bindinput='changeAge'></input>
     </view>
   </view>
   <view class='setting-confirm justify-center'>
-    <view class='setting-save'>确认修改</view>
+    <view class='setting-save' bindtap='saveChange'>确认修改</view>
     <view class='setting-clear' bindtap='clearAll'>清空全部</view>
   </view>
   <view class='setting-logout' bindtap='logout'>

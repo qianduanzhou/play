@@ -26,19 +26,20 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.personItem-man {
+.personItem-man,.personItem-woman{
   position: relative;
   font-size: 20rpx;
   background: #38CEFE;
   width: 70%;
   color: white;
   padding: 3rpx 0;
+  margin-top: 5rpx;
   border-radius: 20rpx;
 }
-.personItem-man  iconfont {
-  
+.personItem-woman {
+  background: #DD5145;
 }
-.personItem-man .icon-nan {
+.personItem-man .icon-nan ,.personItem-woman .icon-nv {
   position: absolute;
   font-size: 20rpx;
   top: -23rpx;
@@ -47,8 +48,15 @@
 .personItem-age {
   margin-left: 42rpx;
 }
-.personItem-city {
-  flex: 1;
+.personItem-other {
+    flex: 1;
+}
+.personItem-city, .personItem-fans {
   text-align: right;
+  display: block;
   font-size: 25rpx;
+}
+.personItem-fans {
+  color: #DD5145;
+  margin-top: 10rpx;
 }

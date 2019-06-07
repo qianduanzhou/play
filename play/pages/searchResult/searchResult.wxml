@@ -1,0 +1,4 @@
+<view class='container column'>
+  <text class='search-result-title'>相关用户</text>
+  <person-item list="{{searchList}}"></person-item>
+</view>

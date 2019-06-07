@@ -9,19 +9,17 @@ Component({
       value:[]
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
 
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
-
+    toDetail(e) {
+      console.log(e)
+      let id = e.currentTarget.dataset.item.userInfo.id || e.currentTarget.dataset.item.id
+      wx.navigateTo({
+        url: '/pages/userDetail/userDetail?userId='+id
+      })
+    }
   },
   options: {
     styleIsolation: 'apply-shared'

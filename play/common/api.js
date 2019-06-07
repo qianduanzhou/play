@@ -19,6 +19,8 @@ let register = 'user/register'
 let login = 'user/login'
 let wxGetInfo = 'user/wxGetInfo'
 let wxLogin = 'user/wxLogin'
+let updateUser = 'user/update'
+let getDetail = 'user/getDetail'
 
 
 let concern = 'concern/concern'
@@ -41,6 +43,8 @@ let setFootmark = 'footmark/setFootmark'
 let getFootmark = 'footmark/getFootmark'
 let clearFootmark = 'footmark/clear'
 
+let searchAll = 'search/searchAll'
+
 function request(api, data = {}, method="get") {
   return new Promise((resolve,reject) => {
     wx.request({
@@ -58,13 +62,36 @@ function request(api, data = {}, method="get") {
   })
 }
 
+function chooseImage() {
+  return new Promise((resolve,reject) => {
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        var tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: url+'user/uploadFile',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          success: (result) => {
+            let imgData = JSON.parse(result.data)
+            resolve(imgData)
+          }
+        })
+      },
+    })
+  })
+}
+
 module.exports = {
+  url,
   request,
   getHotGame,
   getAllGame,
   searchOneGameLevel,
   register,
   login,
+  updateUser,
   publish,
   unPublish,
   published,
@@ -88,5 +115,8 @@ module.exports = {
   concern,
   unConcern,
   checkConcern,
-  concernList
+  concernList,
+  chooseImage,
+  searchAll,
+  getDetail
 }

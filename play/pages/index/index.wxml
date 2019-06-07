@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container column">
   <view class='search-container'>
-    <icon class='iconfont icon-sousuo'></icon>
-    <input class='input' placeholder='搜索品类，昵称，ID'></input>
+    <icon class='iconfont icon-sousuo' bindtap='toSearch'></icon>
+    <input class='input' placeholder='搜索品类，昵称，ID' bindinput='input' value='{{keys}}' bindblur='toSearch'></input>
     <view class='publish-container' bindtap='publish'>
       <icon class='iconfont icon-fabu'></icon>
       <text class='pushlish'>发布</text>

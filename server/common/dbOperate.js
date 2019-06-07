@@ -24,6 +24,18 @@ let searchAll = (dataTable) => {
     })   
 }
 
+let searchLike = (data,dataKey,dataTable) => {
+    return new Promise((resolve,reject) => {
+        db.query(`select * from ${dataTable} where ${dataKey} like '%${data}%'`,[],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
+    })
+}
+
 let deleteOne = (data,sqlKey,dataTable) => {
     return new Promise((resolve,reject) => {
         db.query(`delete from ${dataTable} where ${sqlKey}="${data}"`,[],(err,result,fields) => {
@@ -54,5 +66,6 @@ module.exports = {
     searchOne,
     searchAll,
     deleteOne,
-    updateOne
+    updateOne,
+    searchLike
 }

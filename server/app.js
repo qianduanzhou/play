@@ -11,7 +11,7 @@ var publishRouter = require('./routes/publish');
 var orderRouter = require('./routes/order');
 var footmarkRouter = require('./routes/footmark');
 var concernRouter = require('./routes/concern');
-
+var searchRouter = require('./routes/search')
 
 var app = express();
 
@@ -25,6 +25,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/public/images/*', function (req, res) {
+  console.log(req.url)
+  res.sendFile( __dirname + "/" + req.url );
+  console.log("Request for " + req.url + " received.");
+})
+
+
+
+
 app.use('/', indexRouter);
 app.use('/game', gameRouter);
 app.use('/user', userRouter);
@@ -32,10 +41,12 @@ app.use('/publish', publishRouter);
 app.use('/order', orderRouter);
 app.use('/footmark', footmarkRouter);
 app.use('/concern', concernRouter);
+app.use('/search', searchRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

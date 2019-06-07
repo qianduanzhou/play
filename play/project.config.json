@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 16,
+			"current": 18,
 			"list": [
 				{
 					"id": -1,
@@ -159,6 +159,20 @@
 					"name": "fans",
 					"pathName": "pages/fans/fans",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "searchResult",
+					"pathName": "pages/searchResult/searchResult",
+					"query": "keys=王者",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "userDetail",
+					"pathName": "pages/userDetail/userDetail",
+					"query": "userId=20035",
 					"scene": null
 				}
 			]

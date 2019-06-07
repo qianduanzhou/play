@@ -1,13 +1,20 @@
 <view class='container column'>
-  <view class='personItem-item' wx:for="{{list}}">
-    <image class='personItem-pic' src="{{item.userInfo.userPic}}"></image>
+  <view class='personItem-item' wx:for="{{list}}" bindtap='toDetail' data-item='{{item}}'>
+    <image class='personItem-pic' src="{{item.userInfo.userPic || item.userPic}}"></image>
     <view class='personItem-name-container column'>
-      <text class='personItem-user'>{{item.userInfo.nickname}}</text>
-      <view class='personItem-man'>
+      <text class='personItem-user'>{{item.userInfo.nickname || item.nickname}}</text>
+      <view class='personItem-man' wx:if="{{item.userInfo.sex == 1 || item.sex == 1}}">
         <icon class='iconfont icon-nan'></icon>
-        <text class='personItem-age'>{{item.userInfo.age}}</text>
+        <text class='personItem-age'>{{item.userInfo.age || item.age}}</text>
+      </view>
+      <view class='personItem-woman' wx:if="{{item.userInfo.sex == 2 || item.sex == 2}}">
+        <icon class='iconfont icon-nv'></icon>
+        <text class='personItem-age'>{{item.userInfo.age || item.age}}</text>
       </view>
     </view>
-    <text class='personItem-city'>中国</text>
+    <view class='personItem-other'>
+      <text class='personItem-city'>{{item.userInfo.city || item.city}}</text>
+      <text class='personItem-fans'>粉丝数：{{item.userInfo.fans || item.fans}}</text>
+    </view>
   </view>
 </view>

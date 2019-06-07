@@ -5,6 +5,30 @@ const util = require('../common/util')
 const operate = require('../common/dbOperate')
 const WXBizDataCrypt = require('../common/WXBizDataCrypt')
 
+
+
+const multer = require('multer');  
+let path = require("path");  
+//上传文件配置  
+const storage = multer.diskStorage({  
+  //文件存储位置  
+  destination: (req, file, cb) => {  
+    // cb(null, path.resolve(__dirname, '../../play/images/'));  
+    cb(null, path.resolve(__dirname, '../public/images'));  
+  },  
+  //文件名  
+  filename: (req, file, cb) => {  
+    cb(null, `${Date.now()}_${Math.ceil(Math.random() * 1000)}_multer.${file.originalname.split('.').pop()}`);  
+  }  
+});  
+const uploadCfg = {  
+  storage: storage,  
+  limits: {  
+    //上传文件的大小限制,单位bytes  
+    fileSize: 1024 * 1024 * 20  
+  }  
+};
+
 //  注册
 router.post('/register', function(req, res, next) {
     let username = req.body.username,
@@ -89,8 +113,32 @@ router.post('/clearMessage',function (req,res,next) {
     })
 })
 
+//  上传图片
+router.post('/uploadFile',function (req,res,next) {
+    let upload = multer(uploadCfg).any();  
+  upload(req, res, async (err) => {  
+    if (err) {  
+        util.RESJSON(req, res, next, 500, 'error')
+        return;  
+    };   
+    let uploadFile = req.files[0];  
+    util.RESJSON(req, res, next, 200, 'success',uploadFile.filename)
+  });
+})
+
+//  获取用户详情
+router.get('/getDetail',function (req,res,next) {
+    operate.searchOne(req.query.userId,"id","user").then((result) => {
+        util.RESJSON(req, res, next, 200, 'success',result[0])
+    })
+})
 
 
+router.post('/update',function (req,res,next) {
+    user.updateOneUser(req.body).then(() => {
+        util.RESJSON(req, res, next, 200, 'success')
+    })
+})
 
 //  插入一条数据
 function insertOneUser(username,password,nickname,req, res, next) {

@@ -1,7 +1,7 @@
 <view class='container column'>
   <view class='concern-search-container'>
     <icon class='iconfont icon-sousuo'></icon>
-    <input class='concern-search-input' placeholder='搜索好友'></input>
+    <input class='concern-search-input' placeholder='搜索好友' bindinput='input' bindblur='search' value='{{keys}}'></input>
   </view>
   <view class='concern-title'>关注</view>
   <person-item list="{{concernList}}"></person-item>

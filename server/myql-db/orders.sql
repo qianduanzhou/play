@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50610
 File Encoding         : 65001
 
-Date: 2019-06-06 21:00:40
+Date: 2019-06-08 17:38:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `orders` (
   `time` char(10) DEFAULT NULL,
   `updateTime` char(50) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80034 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=80035 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
@@ -43,4 +43,4 @@ INSERT INTO `orders` VALUES ('80029', '20002', '20035', '18', '第五人格', '1
 INSERT INTO `orders` VALUES ('80030', '20002', '20036', '20', 'LOL', '1', '5', '无', '12:01', '1559708632395');
 INSERT INTO `orders` VALUES ('80031', '20002', '20035', '16', '王者荣耀', '10', '5', '无', '12:01', '1559708740619');
 INSERT INTO `orders` VALUES ('80032', '20002', '20030', '13', '王者荣耀', '1', '5', '无', '12:01', '1559727142429');
-INSERT INTO `orders` VALUES ('80033', '20035', '20030', '13', '王者荣耀', '1', '5', '无', '12:01', '1559824503909');
+INSERT INTO `orders` VALUES ('80034', '20035', '20030', '30', '和平精英', '10', '15', '尽快上线', '12:01', '1559986482394');

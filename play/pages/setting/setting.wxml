@@ -32,6 +32,10 @@
       <text class='setting-input-title'>年龄</text>
       <input type="number" class='setting-input' value='{{age}}' maxlength="3" bindinput='changeAge'></input>
     </view>
+    <view class='setting-input-Item align-center'>
+      <text class='setting-input-title'>城市</text>
+      <input type="text" class='setting-input' value='{{city}}' maxlength="10" bindinput='changeCity'></input>
+    </view>
   </view>
   <view class='setting-confirm justify-center'>
     <view class='setting-save' bindtap='saveChange'>确认修改</view>

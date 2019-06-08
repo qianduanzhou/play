@@ -1,5 +1,6 @@
 const api = require('../../common/api.js')
 const app = getApp()
+const util = require('../../common/util.js')
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
     api.request(api.published, data).then((res) => {
       if(res.code == 200) {
         this.setData({
-          publishedList:res.data
+          publishedList: res.data.sort(util.sortUp)
         })
       }
     })

@@ -133,10 +133,28 @@ router.get('/getDetail',function (req,res,next) {
     })
 })
 
+//  充值
+router.post('/addMoney',function (req,res,next) {
+    operate.searchOne(req.body.userId,"id","user").then((result) => {
+        let money = parseInt(req.body.money) + parseInt(result[0].money)
+        operate.updateOne(money,"money","user",req.body.userId,"id").then(() => {
+            util.RESJSON(req, res, next, 200, 'success')
+        })
+    })
+})
+
+//  更新用户数据
 
 router.post('/update',function (req,res,next) {
     user.updateOneUser(req.body).then(() => {
         util.RESJSON(req, res, next, 200, 'success')
+    })
+})
+
+//  获取全部用户
+router.get('/allUser',function (req,res,next) {
+    operate.searchAll("user").then((result) => {
+        util.RESJSON(req, res, next, 200, 'success',result)
     })
 })
 
@@ -146,5 +164,6 @@ function insertOneUser(username,password,nickname,req, res, next) {
         util.RESJSON(req, res, next, 200, '注册成功')
     })
 }
+
 
 module.exports = router;

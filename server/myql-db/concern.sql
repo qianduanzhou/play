@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50610
 File Encoding         : 65001
 
-Date: 2019-06-06 21:00:01
+Date: 2019-06-08 17:37:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,12 +24,21 @@ CREATE TABLE `concern` (
   `userId` int(10) DEFAULT NULL,
   `enterpriseId` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3029 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3062 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of concern
 -- ----------------------------
-INSERT INTO `concern` VALUES ('3017', '20030', '20034');
-INSERT INTO `concern` VALUES ('3019', '20030', '20036');
-INSERT INTO `concern` VALUES ('3020', '20030', '20002');
-INSERT INTO `concern` VALUES ('3028', '20035', '20030');
+INSERT INTO `concern` VALUES ('3049', '20035', '20002');
+INSERT INTO `concern` VALUES ('3050', '20035', '20030');
+INSERT INTO `concern` VALUES ('3051', '20035', '20034');
+INSERT INTO `concern` VALUES ('3052', '20002', '20030');
+INSERT INTO `concern` VALUES ('3053', '20040', '20002');
+INSERT INTO `concern` VALUES ('3054', '20040', '20034');
+INSERT INTO `concern` VALUES ('3055', '20040', '20035');
+INSERT INTO `concern` VALUES ('3056', '20040', '20030');
+INSERT INTO `concern` VALUES ('3057', '20040', '20037');
+INSERT INTO `concern` VALUES ('3058', '20040', '20036');
+INSERT INTO `concern` VALUES ('3059', '20035', '20037');
+INSERT INTO `concern` VALUES ('3060', '20035', '20038');
+INSERT INTO `concern` VALUES ('3061', '20035', '20039');

@@ -14,7 +14,7 @@
     </view>
     <view class='personItem-other'>
       <text class='personItem-city'>{{item.userInfo.city || item.city}}</text>
-      <text class='personItem-fans'>粉丝数：{{item.userInfo.fans || item.fans}}</text>
+      <text class='personItem-fans'>粉丝数：{{item.userInfo ? item.userInfo.fans : item.fans}}</text>
     </view>
   </view>
 </view>

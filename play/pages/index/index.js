@@ -2,15 +2,25 @@
 //获取应用实例
 const app = getApp()
 const api = require('../../common/api.js')
+const util = require('../../common/util.js')
 
-console.log(api)
 Page({
   data: {
     hotGameList:[],
-    keys:""
+    recommendList:[],
+    keys:"",
+    imgUrls: [
+      'http://192.168.0.105:3000/public/images/swiper1.jpg',
+      'http://192.168.0.105:3000/public/images/swiper2.jpg',
+      'http://192.168.0.105:3000/public/images/swiper3.jpg',
+      'http://192.168.0.105:3000/public/images/swiper4.jpg',
+      'http://192.168.0.105:3000/public/images/swiper5.jpg',
+    ]
   },
   onLoad: function () {
+    this.list = []
     this.getHotGame()
+    this.initRecommend()
   },
   getHotGame() {
     wx.showLoading({
@@ -22,6 +32,22 @@ Page({
           hotGameList: res.data
         })
         wx.hideLoading()
+      }
+    })
+  },
+  initRecommend() {
+    api.request(api.getAllUser).then((res) => {
+      if(res.code == 200) {
+        this.list = res.data
+        let arr = []
+        if(this.list.length > 10) {
+          arr = util.shuffle(this.list).slice(0, 10)
+        }else {
+          arr = res.data.slice(0)
+        } 
+        this.setData({
+          recommendList: arr
+        })
       }
     })
   },
@@ -43,6 +69,29 @@ Page({
   toSearch() {
     wx.navigateTo({
       url: '/pages/searchResult/searchResult?keys='+this.data.keys
+    })
+    this.setData({
+      keys:''
+    })
+  },
+  changeRec() {
+    if (this.list.length > 10) {
+      let arr = util.shuffle(this.list).slice(0, 10)
+      wx.showLoading({
+        title: '加载中',
+        success: () => {
+          this.setData({
+            recommendList: arr
+          })
+          wx.hideLoading()
+        }
+      })
+    }
+  },
+  toUserDetail(e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/userDetail/userDetail?userId='+id
     })
   }
 })

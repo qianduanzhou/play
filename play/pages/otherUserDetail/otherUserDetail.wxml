@@ -13,7 +13,7 @@
     <view class='other-user-detail-main-header align-center'>
       <image class='other-user-detail-main-header-pic' src="{{publishInfo.userInfo.userPic}}"></image>
       <view class='other-user-detail-main-header-userInfo column'>
-        <text class='other-user-detail-main-header-userInfo-nickname'>{{publishInfo.userInfo.nickname}}</text>
+        <text class='other-user-detail-main-header-userInfo-nickname' bindtap='toUser' data-id="{{publishInfo.userInfo.id}}">{{publishInfo.userInfo.nickname}}</text>
         <text class='other-user-detail-main-header-userInfo-city'>{{publishInfo.userInfo.city}}</text>
       </view>
       <view class='other-user-detail-main-header-operator'>

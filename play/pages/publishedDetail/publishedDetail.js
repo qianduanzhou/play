@@ -103,14 +103,14 @@ Page({
             moneyType = this.data.multiArray[0][this.data.multiIndex[0]],
             moneyNum = this.data.multiArray[1][this.data.multiIndex[1]],
             introduction = this.data.introduction,
-            publishTime = new Date().getTime()
+            updateTime = new Date().getTime()
           let data = {
             id: id,
             level: level,
             moneyType: moneyType,
             moneyNum: moneyNum,
             introduction: introduction,
-            publishTime: publishTime
+            updateTime: updateTime
           }
           api.request(api.publishUpdate, data, "post").then((res) => {
             if (res.code == 200) {
@@ -135,9 +135,11 @@ Page({
         if (res.confirm) {
           api.request(api.publishDelete, data, "post").then((res) => {
             util.fleshPre()
-            wx.navigateBack({
-              url:'/pages/published/published'
-            })
+            setTimeout(()=>{
+              wx.navigateBack({
+                url: '/pages/published/published'
+              })
+            },1000)
           })
         }
       }

@@ -13,8 +13,10 @@
 }
 .message-clear {
   float: right;
-  width: 20%;
-  text-align: center;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgba(33,33,33,0.1);
 }
 .message-item {
   border-bottom: 1rpx solid rgba(33,33,33,0.1);

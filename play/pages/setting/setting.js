@@ -8,6 +8,7 @@ Page({
     password: '',
     nickname: '',
     userPic: '',
+    city:'',
     gender:1,
     sex: [
       { name: '1', value: '男', checked: true},
@@ -25,6 +26,7 @@ Page({
           userPic: res.data.userPic,
           password:res.data.password,
           nickname:res.data.nickname,
+          city: res.data.city,
           age:res.data.age
         })
         if(res.data.sex == 2) {
@@ -55,10 +57,11 @@ Page({
     wx.removeStorage({
       key: 'userInfo',
       success: function(res) {
+        app.getStore()
         wx.switchTab({
           url: '/pages/index/index',
         })
-      },
+      }
     })
   },
   clearAll() {
@@ -93,6 +96,11 @@ Page({
       age: e.detail.value
     })
   },
+  changeCity(e) {
+    this.setData({
+      city: e.detail.value
+    })
+  },
   chooseImage() {
     api.chooseImage().then((res) => {
       if (res.code == 200) {
@@ -109,7 +117,8 @@ Page({
       password: this.data.password,
       sex: this.data.gender,
       age: this.data.age,
-      userPic: this.data.userPic
+      userPic: this.data.userPic,
+      city: this.data.city
     }
     wx.showModal({
       title: '修改',
@@ -119,16 +128,18 @@ Page({
           api.request(api.updateUser, data, "post").then((res) => {
             if (res.code == 200) {
               app.checkLogin()
-              wx.showToast({
-                title: '成功',
-                duration: 1000,
-                success: (res) => {
-                  util.fleshPre()
-                  wx.switchTab({
-                    url: '/pages/personal/personal',
-                  })
-                }
-              })
+              setTimeout(()=>{
+                wx.showToast({
+                  title: '成功',
+                  duration: 1000,
+                  success: (res) => {
+                    util.fleshPre()
+                    wx.switchTab({
+                      url: '/pages/personal/personal',
+                    })
+                  }
+                })
+              },100)
             }
           })
         }

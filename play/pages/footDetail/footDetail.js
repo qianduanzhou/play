@@ -32,7 +32,6 @@ Page({
           },"post").then((res) => {
             this.init()
             app.checkLogin()
-            app.getStore()
           })
         }
       }

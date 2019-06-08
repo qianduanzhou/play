@@ -14,8 +14,8 @@ Component({
   },
   methods: {
     toDetail(e) {
-      console.log(e)
-      let id = e.currentTarget.dataset.item.userInfo.id || e.currentTarget.dataset.item.id
+      
+      let id = e.currentTarget.dataset.item.userInfo ? e.currentTarget.dataset.item.userInfo.id : e.currentTarget.dataset.item.id
       wx.navigateTo({
         url: '/pages/userDetail/userDetail?userId='+id
       })

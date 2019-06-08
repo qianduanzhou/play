@@ -1,7 +1,7 @@
 <view class='container column'>
   <view class='fans-search-container'>
     <icon class='iconfont icon-sousuo'></icon>
-    <input class='fans-search-input' placeholder='搜索粉丝'></input>
+    <input class='fans-search-input' placeholder='搜索粉丝' bindinput='input' bindblur='search' value='{{keys}}'></input>
   </view>
   <view class='fans-title'>粉丝</view>
   <person-item list="{{fansList}}"></person-item>

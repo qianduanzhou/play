@@ -53,5 +53,33 @@ router.post('/searchAll',async function (req,res,next) {
 })
 
 
+router.post('/searchOne',function (req,res,next) {
+    let type = req.body.type,
+        userId = req.body.userId,
+        keys = req.body.keys,
+        id = ''
+    if(type == "关注") {
+        id = "userId"
+    }else {
+        id = "enterpriseId"
+    }
+    operate.searchOne(req.body.userId,id,"concern").then(async (result) => {
+        let list = [],inId = ''
+        for(let i = 0;i < result.length; i ++) {
+            if(type == "关注") {
+                inId = result[i].enterpriseId
+            }else {
+                inId = result[i].userId
+            }
+            await operate.searchOne(inId,"id","user").then((user) => {
+                if(user[0].nickname.includes(req.body.keys)) {
+                    list.push(user[0])
+                }
+            })
+        }
+        util.RESJSON(req, res, next, 200, 'success',list)
+    })
+})
+
 
 module.exports = router;

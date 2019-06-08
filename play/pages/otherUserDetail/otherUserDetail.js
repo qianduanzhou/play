@@ -44,5 +44,11 @@ Page({
   },
   unConcern() {
     common.unConcern(app, api, this.enterpriseId, this)
+  },
+  toUser(e) {
+    let userId = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/userDetail/userDetail?userId=' + userId,
+    })
   }
 })

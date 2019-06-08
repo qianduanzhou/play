@@ -11,6 +11,9 @@ App({
       key: 'userInfo',
       success: (res) => {
         this.data.userInfo = res.data
+      },
+      fail:(res) => {
+        this.data.userInfo = {}
       }
     })
   },
@@ -25,6 +28,7 @@ App({
           key: 'userInfo',
           data: res.data[0],
         })
+        this.getStore()
       }
     })
   }

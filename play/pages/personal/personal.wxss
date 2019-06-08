@@ -107,3 +107,32 @@
 .personal-other-Item:nth-child(3) .personal-other-title{
   margin-top: 18rpx;
 }
+.personal-money-model {
+  font-weight: normal;
+  color:white;
+  background: rgba(0, 137, 200, 0.493);
+  padding: 50rpx 20rpx;
+  border-radius: 20rpx;
+}
+.personal-money-title {
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.personal-money-input {
+  border: 1rpx solid #E1E1E2;
+  margin-top: 30rpx;
+  text-align: center;
+}
+.personal-money-opeartor {
+  margin: 40rpx auto 0 auto;
+  width: 80%;
+}
+.personal-money-confirm,.personal-money-cancel {
+  text-align: center;
+  padding: 10rpx 15rpx;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #E1E1E2;
+}

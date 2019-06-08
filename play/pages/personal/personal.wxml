@@ -13,7 +13,7 @@
       <text class='personal-name'>{{userInfo.nickname}}</text>
       <text class='personal-ID'>ID {{userInfo.id}}</text>
     </view>
-    <image class='personal-userPic' src='{{userInfo.userPic}}'></image>
+    <image class='personal-userPic' src='{{userInfo.userPic}}' bindtap='toSetting'></image>
     <view class='personal-message justify-spc'>
       <view class='personal-message-item column' bindtap='toConcern'>
         <text class='personal-message-num'>{{userInfo.concern}}</text>
@@ -23,7 +23,7 @@
         <text class='personal-message-num'>{{userInfo.fans}}</text>
         <text class='personal-message-title'>粉丝</text>
       </view>
-      <view class='personal-message-item column'>
+      <view class='personal-message-item column' bindtap='showMoney'>
         <text class='personal-message-num'>{{userInfo.money}}</text>
         <text class='personal-message-title'>余额</text>
       </view>
@@ -49,6 +49,14 @@
     <view class='personal-other-Item column' bindtap='toSetting'>
       <icon class='iconfont icon-shezhi'></icon>
       <text class='personal-other-title'>设置中心</text>
+    </view>
+  </view>
+  <view class='personal-money-model viewport-center' wx:if="{{model}}">
+    <text class='personal-money-title'>请输入充值金额</text>
+    <input class='personal-money-input' type='money' bindinput='inputMoney' value='{{money}}'></input>
+    <view class='personal-money-opeartor justify-spc'>
+      <view class='personal-money-cancel' bindtap='cancel'>取消</view>
+      <view class='personal-money-confirm' bindtap='addMoney'>确定</view>
     </view>
   </view>
 </view>

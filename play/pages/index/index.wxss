@@ -32,3 +32,55 @@
   font-size: 30rpx;
   color:#38CEFE;
 }
+.recommend {
+  position: relative;
+}
+.recommend-border {
+  width: 60%;
+  height: 80rpx;
+  margin: 30rpx auto 20rpx auto;
+  display: block;
+}
+.recommend-title {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-weight: bold;
+  letter-spacing: 5rpx;
+  color: #38CEFE;
+}
+.recommend-container {
+  margin-top: 20rpx;
+  margin-bottom: 100rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #E1E1E2;
+  background: white;
+  border-radius: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.recommend-item {
+  width: 50%;
+  margin-top: 30rpx;
+}
+.recommend-item:last-child {
+  margin-bottom: 30rpx;
+}
+.recommend-item:nth-last-child(2) {
+  margin-bottom: 30rpx;
+}
+.recommend-item-pic {
+  width: 300rpx;
+  height: 300rpx;
+}
+.icon-huanyihuan {
+  position: absolute;
+  right: 30rpx;
+  top: 28rpx;
+  font-size: 40rpx;
+  color: #38CEFE;
+  padding: 20rpx;
+  display: block;
+}

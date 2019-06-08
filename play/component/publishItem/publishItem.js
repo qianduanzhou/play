@@ -45,7 +45,6 @@ Component({
         api.request(api.setFootmark, data, "post").then((res) => {
           if(res.code == 200) {
             app.checkLogin()
-            app.getStore()
           }
         })
         api.request(api.setMessage,message,"post").then((res) => {

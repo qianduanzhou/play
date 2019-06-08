@@ -1,6 +1,7 @@
 const app = getApp()
 const api = require('../../common/api.js')
 const common = require('../../common/common.js')
+const util = require('../../common/util.js')
 Page({
   data: {
     userInfo:{},
@@ -27,11 +28,14 @@ Page({
   },
   checkConcern() {
     common.checkConcern(app, api, this.enterpriseId, this)
+    util.fleshPre()
   },
   concern() {
     common.concern(app, api, this.enterpriseId,this)
+    util.fleshPre()
   },
   unConcern() {
     common.unConcern(app, api, this.enterpriseId, this)
+    util.fleshPre()
   }
 })

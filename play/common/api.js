@@ -21,7 +21,8 @@ let wxGetInfo = 'user/wxGetInfo'
 let wxLogin = 'user/wxLogin'
 let updateUser = 'user/update'
 let getDetail = 'user/getDetail'
-
+let addMoney = 'user/addMoney'
+let getAllUser = 'user/allUser'
 
 let concern = 'concern/concern'
 let unConcern = 'concern/unConcern'
@@ -44,6 +45,9 @@ let getFootmark = 'footmark/getFootmark'
 let clearFootmark = 'footmark/clear'
 
 let searchAll = 'search/searchAll'
+let searchOne = "search/searchOne"
+
+
 
 function request(api, data = {}, method="get") {
   return new Promise((resolve,reject) => {
@@ -92,6 +96,9 @@ module.exports = {
   register,
   login,
   updateUser,
+  getDetail,
+  getAllUser,
+  addMoney,
   publish,
   unPublish,
   published,
@@ -118,5 +125,5 @@ module.exports = {
   concernList,
   chooseImage,
   searchAll,
-  getDetail
+  searchOne
 }

@@ -1,0 +1,9 @@
+<view class='container column'>
+  <text class='found-detail-title'>{{detail.title}}</text>
+  <text class='found-detail-sign'>{{detail.type}}</text>
+  <text class='found-detail-time'>{{detail.updateTime}}</text>
+  <image class='found-detail-sign-pic' src='{{detail.image}}' mode='aspectFill' lazy-load="true"></image>
+  <view class='found-detail-introduction-container' wx:for="{{detail.introduction}}">
+    <view class='found-detail-introduction'>{{item}}</view>
+  </view>
+</view>

@@ -34,4 +34,19 @@ router.post('/level', function (req, res, next) {
   })
 })
 
+//  获取全部资讯
+router.get('/found',function (req, res, next) {
+  operate.searchAll('found').then((result) => {
+    util.RESJSON(req, res, next, 200,'success',result)
+  })
+})
+
+//  获取资讯详情
+router.get('/foundDetail',function (req, res, next) {
+  operate.searchOne(req.query.id,'id','found').then((result) => {
+    util.RESJSON(req, res, next, 200,'success',result[0])
+  })
+})
+
+
 module.exports = router;

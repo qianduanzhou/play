@@ -1,0 +1,34 @@
+.container {
+  margin-bottom: 100rpx;
+}
+
+.found-detail-title {
+  width: 80%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 10rpx auto;
+  font-weight: bold;
+}
+.found-detail-sign,.found-detail-time {
+  margin: 0 auto;
+  display: block;
+  font-size: 35rpx;
+  color: #333;
+}
+.found-detail-time {
+  font-size: 30rpx;
+  color: #555;
+}
+.found-detail-sign-pic {
+  width: 80%;
+  margin: 20rpx auto;
+  display: block;
+}
+.found-detail-introduction-container {
+  margin: 0 30rpx;
+}
+.found-detail-introduction {
+  margin-top: 50rpx;
+}

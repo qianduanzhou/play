@@ -14,6 +14,9 @@ Page({
     this.init()
   },
   init() {
+    wx.showLoading({
+      title: '加载中',
+    })
     let data = {
       userId : app.data.userInfo.id
     }
@@ -22,6 +25,7 @@ Page({
         this.setData({
           publishedList: res.data.sort(util.sortUp)
         })
+        wx.hideLoading()
       }
     })
   }

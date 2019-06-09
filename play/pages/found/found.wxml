@@ -1,2 +1,23 @@
-<!--pages/found/found.wxml-->
-<text>pages/found/found.wxml</text>
+<view class='container'>
+  <view class='found-item' wx:for="{{foundList}}">
+    <text class='found-bigType'>{{item.bigType}}</text>
+    <view class='found-item-item' wx:for="{{item.data}}" wx:for-item="item1">
+      <text class='found-type'>{{item1.type}}</text>
+      <view class='found-item-item-item align-center'  wx:for="{{item1.data}}" wx:for-item="item2" bindtap='toDetail' data-id='{{item2.id}}'>
+        <image class='found-item-item-item-pic' src='{{item2.image}}' mode='aspectFill' lazy-load="true"></image>
+        <view class='found-item-item-item-detail'>
+          <text class='found-item-item-item-detail-title'>
+            {{item2.title}}
+          </text>
+          <text class='found-item-item-item-detail-ins'>
+          {{item2.introduction}}
+          </text>
+          <text class='found-item-item-item-detail-time'>{{item2.updateTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='toTop' wx:if="{{showTop}}" bindtap='toTop'>
+    回到顶部
+  </view>
+</view>

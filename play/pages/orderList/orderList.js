@@ -11,6 +11,9 @@ Page({
     this.init()
   },
   init() {
+    wx.showLoading({
+      title: '加载中',
+    })
     api.request(api.getOrder,{
       userId:app.data.userInfo.id
     }).then((res) => {
@@ -18,6 +21,7 @@ Page({
       this.setData({
         orderList: res.data.sort(util.sortUp)
       })
+      wx.hideLoading()
     })
   },
   changeMode() {

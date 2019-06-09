@@ -19,6 +19,9 @@ Page({
     this.init(options.name)
   },
   init(name) {
+    wx.showLoading({
+      title: '加载中',
+    })
     api.request(api.searchPublish,{
       name: name,
       userId: app.data.userInfo.id
@@ -32,6 +35,7 @@ Page({
         publishList: this.priceList,
         level: level
       })
+      wx.hideLoading()
     })
   },
   bindPickerChange: function (e) {

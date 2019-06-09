@@ -66,6 +66,9 @@ def getData(image,title,updateTime,inUrl,bigType,type):
     introductions = response.xpath("//div[@class='content']/div[@class='left']/div[@class='text']/p/text()")
     introduction = '/n'.join(introductions)
     # print(introduction)
+    if image[0] != 'h':
+        image = url + image
+
     objs = {
         "bigType":bigType,
         "type":type,

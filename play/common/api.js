@@ -47,7 +47,8 @@ let clearFootmark = 'footmark/clear'
 let searchAll = 'search/searchAll'
 let searchOne = "search/searchOne"
 
-
+let getFound = 'game/found'
+let getFoundDetial = 'game/foundDetail'
 
 function request(api, data = {}, method="get") {
   return new Promise((resolve,reject) => {
@@ -125,5 +126,7 @@ module.exports = {
   concernList,
   chooseImage,
   searchAll,
-  searchOne
+  searchOne,
+  getFound,
+  getFoundDetial
 }

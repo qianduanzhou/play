@@ -1,66 +1,85 @@
-// pages/found/found.js
+const app = getApp()
+const api = require('../../common/api.js')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    foundList:[],
+    showTop:false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    this.init()
   },
+  init() {
+    api.request(api.getFound).then((res) => {
+      wx.showLoading({
+        title: '加载中',
+        duration:1500
+      })
+      let list = [],
+        bigTypes = [],
+        types = []
+      if (res.code == 200) {
+        res.data.forEach((item) => {
+          if(!bigTypes.includes(item.bigType)) {
+            bigTypes.push(item.bigType)
+          }
+          if (!types.includes(item.type)) {
+            types.push(item.type)
+          }
+        })
+        bigTypes.forEach((item1) => {
+          list.push({
+            bigType:item1,
+            data:[]
+          })
+          types.forEach((item2) => {
+            if(item1.includes(item2[0])) {
+              list.forEach((item3) => {
+                if(item3.bigType == item1) {
+                  item3.data.push({
+                    type:item2,
+                    data:[]
+                  })
+                }
+              })
+            }
+          })
+        })
+        list.forEach((item1) => {
+          item1.data.forEach((item2) => {
+            res.data.forEach((item3) => {
+              if(item3.type == item2.type) {
+                item2.data.push(item3)
+              }
+            })
+          })
+        })
+        this.setData({
+          foundList:list
+        })
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onPageScroll: function (e) {
+    let height = wx.getSystemInfoSync().windowHeight 
+    if(e.scrollTop > height) {
+      this.setData({
+        showTop:true
+      })
+    }else {
+      this.setData({
+        showTop: false
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  toTop() {
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  toDetail(e) {
+    wx.navigateTo({
+      url: '/pages/foundDetail/foundDetail?id=' + e.currentTarget.dataset.id,
+    })
   }
 })

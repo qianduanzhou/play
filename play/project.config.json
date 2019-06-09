@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -173,6 +173,20 @@
 					"name": "userDetail",
 					"pathName": "pages/userDetail/userDetail",
 					"query": "userId=20035",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "found",
+					"pathName": "pages/found/found",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "foundDetail",
+					"pathName": "pages/foundDetail/foundDetail",
+					"query": "id=1249",
 					"scene": null
 				}
 			]

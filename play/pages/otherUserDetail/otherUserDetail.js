@@ -18,6 +18,9 @@ Page({
     this.checkConcern()
   },
   init(options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let data = {
       game : options.game,
       userId : options.userId
@@ -27,6 +30,7 @@ Page({
         this.setData({
           publishInfo: res.data
         })
+        wx.hideLoading()
       }
     })
   },

@@ -20,7 +20,8 @@
     "pages/concern/concern",
     "pages/fans/fans",
     "pages/searchResult/searchResult",
-    "pages/userDetail/userDetail"
+    "pages/userDetail/userDetail",
+    "pages/foundDetail/foundDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

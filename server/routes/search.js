@@ -10,7 +10,7 @@ router.post('/searchAll',async function (req,res,next) {
     isGame = false,isId = false,isNickame = false
     await operate.searchAll("game").then((result) => {
         isGame = result.some(item => {
-            if(item.name.includes(keys)) {
+            if(item.name.includes(keys) && keys != '') {
                 return true
             }
         });

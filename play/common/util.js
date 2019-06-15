@@ -81,11 +81,26 @@ function shuffle(arr) {
   return _arr
 }
 
+
+//  仿抖
+function debounce(method, delay) {
+  let timer = null;
+  return function () {
+    let self = this,
+        args = arguments;
+    timer && clearTimeout(timer);
+    timer = setTimeout(function () {
+      method.apply(self, args);
+    }, delay);
+  }
+}
+
 module.exports = {
   formatList: formatList,
   getName: getName,
   fleshPre: fleshPre,
   sortUp: sortUp,
   sortDown: sortDown,
-  shuffle: shuffle
+  shuffle: shuffle,
+  debounce: debounce
 }

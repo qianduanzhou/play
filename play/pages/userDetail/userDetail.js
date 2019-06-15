@@ -28,14 +28,20 @@ Page({
   },
   checkConcern() {
     common.checkConcern(app, api, this.enterpriseId, this)
-    util.fleshPre()
+    setTimeout(() => {
+      util.fleshPre()
+    },100)
   },
   concern() {
     common.concern(app, api, this.enterpriseId,this)
-    util.fleshPre()
+    setTimeout(() => {
+      util.fleshPre()
+    }, 100)
   },
   unConcern() {
     common.unConcern(app, api, this.enterpriseId, this)
-    util.fleshPre()
+    setTimeout(() => {
+      util.fleshPre()
+    }, 100)
   }
 })

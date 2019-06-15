@@ -1,5 +1,6 @@
 const app = getApp()
 const api = require('../../common/api.js')
+const util = require('../../common/util.js')
 Page({
   data: {
     foundList:[],
@@ -60,8 +61,9 @@ Page({
       }
     })
   },
-  onPageScroll: function (e) {
+  onPageScroll: util.debounce(function (e) {
     let height = wx.getSystemInfoSync().windowHeight 
+    console.log(height)
     if(e.scrollTop > height) {
       this.setData({
         showTop:true
@@ -71,7 +73,7 @@ Page({
         showTop: false
       })
     }
-  },
+  },200),
   toTop() {
     wx.pageScrollTo({
       scrollTop: 0

@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ee1c157-cad0-4b77-b069-8c10c03a6644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../play/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../play/common/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../play/pages/found/found.js" beforeDir="false" afterPath="$PROJECT_DIR$/../play/pages/found/found.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../play/pages/found/found.json" beforeDir="false" afterPath="$PROJECT_DIR$/../play/pages/found/found.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../play/pages/found/found.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../play/pages/found/found.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../play/pages/found/found.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../play/pages/found/found.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../play/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../play/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getData.py" beforeDir="false" afterPath="$PROJECT_DIR$/getData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/routes/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/routes/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../play/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play/pages/concern/concern.js" beforeDir="false" afterPath="$PROJECT_DIR$/../play/pages/concern/concern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play/pages/userDetail/userDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../play/pages/userDetail/userDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/myql-db/found.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../server/myql-db/found.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/routes/search.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="266">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -63,6 +59,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -74,7 +71,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -187,8 +183,8 @@
     <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/getData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+        <state relative-caret-position="266">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

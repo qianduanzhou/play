@@ -15,6 +15,7 @@ Page({
       type:"关注"
     }).then((res) => {
       if(res.code == 200) {
+        console.log(res.data)
         this.setData({
           concernList:res.data
         })

@@ -17,7 +17,6 @@ function concern(app, api, enterpriseId, that) {
       })
       api.request(api.setMessage, message, "post").then((res) => { })
       app.checkLogin()
-      app.getStore()
       wx.showToast({
         title: '关注成功',
         duration: 1500
@@ -45,7 +44,6 @@ function unConcern(app, api, enterpriseId, that) {
       })
       api.request(api.setMessage, message, "post").then((res) => { })
       app.checkLogin()
-      app.getStore()
       wx.showToast({
         title: '取消关注成功',
         duration: 1500

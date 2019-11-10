@@ -17,7 +17,7 @@ router.post('/searchAll',async function (req,res,next) {
     }) 
     if(!isGame) {
         if(!isNaN(keys)) {
-            operate.searchLike(keys,"id","user").then((result) => {
+            operate.searchLike(keys,['id'],"user").then((result) => {
                 if(result.length > 0) {
                     util.RESJSON(req, res, next, 200, 'success',result)
                 }else {
@@ -25,7 +25,7 @@ router.post('/searchAll',async function (req,res,next) {
                 }
             })
         }else {
-            operate.searchLike(keys,"nickname","user").then((result) => {
+            operate.searchLike(keys,['nickname'],"user").then((result) => {
                 if(result.length > 0) {
                     util.RESJSON(req, res, next, 200, 'success',result)
                 }else {
@@ -34,7 +34,7 @@ router.post('/searchAll',async function (req,res,next) {
             })
         }
     }else {
-        operate.searchLike(keys,"game","publishList").then(async (result) => {
+        operate.searchLike(keys,['game'],"publishList").then(async (result) => {
             if(result.length > 0) {
                 let userInfos = []
                 for(let i = 0; i < result.length; i ++) {

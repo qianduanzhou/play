@@ -1,11 +1,11 @@
 // 本地url
-// let url = "http://192.168.0.105:3000/"
+let url = "http://localhost:3000/"
 
 // 手机调试url：根据自己电脑ip设置（自行百度查ip方法）
 // let url = "http://192.168.0.105:3000/"
 
 //  阿里云url
-let url = "http://47.102.220.59:3200/"
+// let url = "http://47.102.220.59:3200/"
 
 let getHotGame = 'game/hotgame'
 let getAllGame = 'game/allgame'

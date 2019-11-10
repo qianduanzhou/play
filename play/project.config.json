@@ -15,7 +15,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.1",
 	"appid": "wx04972a9c0769de54",
-	"projectname": "%E4%B8%80%E8%B5%B7%E7%8E%A9",
+	"projectname": "play",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

@@ -11,7 +11,7 @@ let searchOne = (data,sqlKey,dataTable) => {
         })
     })
 }
-
+//  查询全部数据
 let searchAll = (dataTable) => {
     return new Promise((resolve,reject) => {
         db.query(`select * from ${dataTable}`,[],(err,result,fields) => {
@@ -23,10 +23,64 @@ let searchAll = (dataTable) => {
         })
     })   
 }
-
-let searchLike = (data,dataKey,dataTable) => {
+//  查询前几条数据
+let searchAllLimit = (dataTable,page,pageSize,data,sqlKeyList) => {
     return new Promise((resolve,reject) => {
-        db.query(`select * from ${dataTable} where ${dataKey} like '%${data}%'`,[],(err,result,fields) => {
+        db.query(`select * from ${dataTable} where concat(${sqlKeyList.join(',')}) like '%${data}%' limit ${(page - 1) * pageSize},${pageSize};`,[],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
+    })   
+}
+//  查询总数
+let searchAllCount = (dataTable,data,sqlKeyList) => {
+    console.log('sqlKeyList',sqlKeyList.join(','))
+    return new Promise((resolve,reject) => {
+        if(data) {
+            db.query(`select count(*) from ${dataTable} where concat(${sqlKeyList.join(',')}) like '%${data}%';`,[],(err,result,fields) => {
+                if(err) {
+                    reject(err)
+                }else {
+                    resolve(result)
+                }
+            })
+        }else {
+            db.query(`select count(*) from ${dataTable};`,[],(err,result,fields) => {
+                if(err) {
+                    reject(err)
+                }else {
+                    resolve(result)
+                }
+            })
+        }
+    }) 
+}
+//  按关键字查询
+let searchLike = (data,sqlKeyList,dataTable) => {
+    return new Promise((resolve,reject) => {
+        db.query(`select * from ${dataTable} where concat(${sqlKeyList.join(',')}) like '%${data}%'`,[],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
+    })
+}
+
+//  插入一条数据
+let insertOne = (dataObj,dataTable) => {
+    let keys = [],
+        values = []
+    for(let key in dataObj) {
+        keys.push(key)
+        values.push(dataObj[key].toString())
+    }
+    return new Promise((resolve,reject) => {
+        db.query(`insert into ${dataTable} (${keys.join(',')}) values (${new Array(keys.length).fill('?').join(',')});`,[...values],(err,result,fields) => {
             if(err) {
                 reject(err)
             }else {
@@ -65,7 +119,10 @@ let updateOne = (data,dataKey,dataTable,condition,condKey) => {
 module.exports = {
     searchOne,
     searchAll,
+    searchAllLimit,
+    searchAllCount,
+    searchLike,
     deleteOne,
     updateOne,
-    searchLike
+    insertOne
 }

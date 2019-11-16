@@ -72,7 +72,6 @@ router.get('/userList',async function(req, res, next) {
             util.RESJSON(req, res, next, 200, msg, data)
         }else {
             let msg = "暂无数据"
-            data.dataList = []
             util.RESJSON(req, res, next, 404, msg, data)
         }
     })

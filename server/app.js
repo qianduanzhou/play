@@ -1,27 +1,31 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 const JwtUtil = require('./common/jwt');
 
 //  客户端
-var indexRouter = require('./routes/client/index');
-var gameRouter = require('./routes/client/game');
-var userRouter = require('./routes/client/user');
-var publishRouter = require('./routes/client/publish');
-var orderRouter = require('./routes/client/order');
-var footmarkRouter = require('./routes/client/footmark');
-var concernRouter = require('./routes/client/concern');
-var searchRouter = require('./routes/client/search')
+const indexRouter = require('./routes/client/index');
+const gameRouter = require('./routes/client/game');
+const userRouter = require('./routes/client/user');
+const publishRouter = require('./routes/client/publish');
+const orderRouter = require('./routes/client/order');
+const footmarkRouter = require('./routes/client/footmark');
+const concernRouter = require('./routes/client/concern');
+const searchRouter = require('./routes/client/search')
 
 
 //  后台
-var userManageRouter = require('./routes/server/user_manage');
-var customerManageRouter = require('./routes/server/customer_manage');
+const userManageRouter = require('./routes/server/user_manage');
+const customerManageRouter = require('./routes/server/customer_manage');
+const gameManageRouter = require('./routes/server/game_manage');
 
-var app = express();
+//  公用
+const upload = require('./routes/upload.js')
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -70,6 +74,9 @@ app.use('/search', searchRouter);
 
 app.use('/userManage', userManageRouter);
 app.use('/customerManage', customerManageRouter);
+app.use('/gameManage', gameManageRouter);
+
+app.use('/upload', upload);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

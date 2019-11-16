@@ -1,8 +1,9 @@
+const path = require('path')
 const express = require('express');
 const router = express.Router();
-const user = require('../module/user')
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
+const user = require(path.resolve('module/user'))
+const util = require(path.resolve('common/util'))
+const operate = require(path.resolve('common/dbOperate'))
 
 
 //  关注商家

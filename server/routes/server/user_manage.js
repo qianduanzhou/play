@@ -1,9 +1,10 @@
+const path = require('path')
 const express = require('express');
 const router = express.Router();
 // const user_manage = require('../module/user_manage')
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
-const JwtUtil = require('../common/jwt');
+const util = require(path.resolve('common/util'))
+const operate = require(path.resolve('common/dbOperate'))
+const JwtUtil = require(path.resolve('common/jwt'))
 
 //  登录
 router.post('/login',function (req, res, next) {
@@ -69,6 +70,10 @@ router.get('/userList',async function(req, res, next) {
             let msg = "查询成功"
             data.dataList = result
             util.RESJSON(req, res, next, 200, msg, data)
+        }else {
+            let msg = "暂无数据"
+            data.dataList = []
+            util.RESJSON(req, res, next, 404, msg, data)
         }
     })
 })

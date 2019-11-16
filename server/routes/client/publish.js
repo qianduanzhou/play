@@ -1,8 +1,9 @@
+const path = require('path')
 var express = require('express');
 var router = express.Router();
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
-const publish = require('../module/publish')
+const util = require(path.resolve('common/util'))
+const operate = require(path.resolve('common/dbOperate'))
+const publish = require(path.resolve('module/publish'))
 
 
 //  发布一起玩游戏

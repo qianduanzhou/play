@@ -1,10 +1,10 @@
+const path = require('path')
 const express = require('express');
 const router = express.Router();
-const user = require('../module/user')
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
-const footmark = require('../module/footmark')
-const publish = require('../module/publish')
+const util = require(path.resolve('common/util'))
+const operate = require(path.resolve('common/dbOperate'))
+const footmark = require(path.resolve('module/footmark'))
+const publish = require(path.resolve('module/publish'))
 
 //  存储浏览足迹
 router.post('/setFootmark',function (req,res,next) {

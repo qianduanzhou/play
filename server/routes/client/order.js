@@ -1,9 +1,9 @@
+const path = require('path')
 var express = require('express');
 var router = express.Router();
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
-const publish = require('../module/publish')
-const order = require('../module/order')
+const util = require(path.resolve('common/util'))
+const operate = require(path.resolve('common/dbOperate'))
+const order = require(path.resolve('module/order'))
 
 //  购买详情
 router.get('/buyDetail',async function (req,res,next) {

@@ -1,14 +1,14 @@
+const path = require('path')
 const express = require('express');
 const router = express.Router();
-const user = require('../module/user')
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
-const WXBizDataCrypt = require('../common/WXBizDataCrypt')
+const user = require(path.resolve('module/user'))
+const util = require(path.resolve('common/util'))
+const operate = require(path.resolve('common/dbOperate'))
+const WXBizDataCrypt = require(path.resolve('common/WXBizDataCrypt'))
 
 
 
 const multer = require('multer');  
-let path = require("path");  
 //上传文件配置  
 const storage = multer.diskStorage({  
   //文件存储位置  

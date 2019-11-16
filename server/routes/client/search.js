@@ -1,8 +1,8 @@
+const path = require('path')
 const express = require('express');
 const router = express.Router();
-const user = require('../module/user')
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
+const util = require(path.resolve('common/util'))
+const operate =  require(path.resolve('common/dbOperate'))
 
 
 router.post('/searchAll',async function (req,res,next) {

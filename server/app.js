@@ -4,16 +4,22 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var gameRouter = require('./routes/game');
-var userRouter = require('./routes/user');
-var userManageRouter = require('./routes/user_manage');
-var publishRouter = require('./routes/publish');
-var orderRouter = require('./routes/order');
-var footmarkRouter = require('./routes/footmark');
-var concernRouter = require('./routes/concern');
-var searchRouter = require('./routes/search')
 const JwtUtil = require('./common/jwt');
+
+//  客户端
+var indexRouter = require('./routes/client/index');
+var gameRouter = require('./routes/client/game');
+var userRouter = require('./routes/client/user');
+var publishRouter = require('./routes/client/publish');
+var orderRouter = require('./routes/client/order');
+var footmarkRouter = require('./routes/client/footmark');
+var concernRouter = require('./routes/client/concern');
+var searchRouter = require('./routes/client/search')
+
+
+//  后台
+var userManageRouter = require('./routes/server/user_manage');
+var customerManageRouter = require('./routes/server/customer_manage');
 
 var app = express();
 
@@ -56,13 +62,14 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/game', gameRouter);
 app.use('/user', userRouter);
-app.use('/userManage', userManageRouter);
 app.use('/publish', publishRouter);
 app.use('/order', orderRouter);
 app.use('/footmark', footmarkRouter);
 app.use('/concern', concernRouter);
 app.use('/search', searchRouter);
 
+app.use('/userManage', userManageRouter);
+app.use('/customerManage', customerManageRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -1,8 +1,9 @@
+const path = require('path')
 var express = require('express');
 var router = express.Router();
-const game = require('../module/game')
-const util = require('../common/util')
-const operate = require('../common/dbOperate')
+const game = require(path.resolve('module/game'))
+const util = require(path.resolve('common/util'))
+const operate = require(path.resolve('common/dbOperate'))
 
 /* GET users listing. */
 

@@ -8,8 +8,7 @@ const JwtUtil = require(path.resolve('common/jwt'))
 
 //  登录
 router.post('/login',function (req, res, next) {
-    let username = req.body.username,
-        password = req.body.password
+    let {username,password} = req.body
     operate.searchOne(username,'username','user_manage').then((result) => {
         console.log('result',result)
         let id = result[0].id.toString();
@@ -54,9 +53,7 @@ router.post('/register', function(req, res, next) {
 
 //  查询
 router.get('/userList',async function(req, res, next) {
-    let page = req.query.page,
-        pageSize = req.query.pageSize,
-        keyword = req.query.keyword
+    let {page = 1, pageSize = 10, keyword = ''} = req.query,
         data = {
             dataList: [],
             total: 0

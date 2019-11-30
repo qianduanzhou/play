@@ -24,9 +24,9 @@ let searchAll = (dataTable) => {
     })   
 }
 //  查询前几条数据
-let searchAllLimit = (dataTable,page,pageSize,data,sqlKeyList) => {
+let searchAllLimit = (dataTable,page,pageSize,data,sqlKeyList,startTime = 1,endTime = 15596541245020) => {
     return new Promise((resolve,reject) => {
-        db.query(`select * from ${dataTable} where concat(${sqlKeyList.join(',')}) like '%${data}%' limit ${(page - 1) * pageSize},${pageSize};`,[],(err,result,fields) => {
+        db.query(`select * from ${dataTable} where updateTime > ${startTime} and updateTime < ${endTime} and concat(${sqlKeyList.join(',')}) like '%${data}%' limit ${(page - 1) * pageSize},${pageSize};`,[],(err,result,fields) => {
             if(err) {
                 reject(err)
             }else {
@@ -36,26 +36,15 @@ let searchAllLimit = (dataTable,page,pageSize,data,sqlKeyList) => {
     })   
 }
 //  查询总数
-let searchAllCount = (dataTable,data,sqlKeyList) => {
-    console.log('sqlKeyList',sqlKeyList.join(','))
+let searchAllCount = (dataTable,data,sqlKeyList,startTime = 1,endTime = 15596541245020) => {
     return new Promise((resolve,reject) => {
-        if(data) {
-            db.query(`select count(*) from ${dataTable} where concat(${sqlKeyList.join(',')}) like '%${data}%';`,[],(err,result,fields) => {
-                if(err) {
-                    reject(err)
-                }else {
-                    resolve(result)
-                }
-            })
-        }else {
-            db.query(`select count(*) from ${dataTable};`,[],(err,result,fields) => {
-                if(err) {
-                    reject(err)
-                }else {
-                    resolve(result)
-                }
-            })
-        }
+        db.query(`select count(*) from ${dataTable} where updateTime > ${startTime} and updateTime < ${endTime} and concat(${sqlKeyList.join(',')}) like '%${data}%';`,[],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
     }) 
 }
 //  按关键字查询

@@ -69,6 +69,7 @@ router.post('/wxGetInfo',function (req, res, next) {
         sessionKey = req.body.sessionKey,
         encryptedData = req.body.encryptedData,
         iv = req.body.iv
+        console.log('wxGetInfo', appId,sessionKey,encryptedData,iv)
     let pc = new WXBizDataCrypt(appId, sessionKey)
     let data = pc.decryptData(encryptedData , iv)  
     util.RESJSON(req, res, next, 200, 'success',data)

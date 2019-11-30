@@ -6,9 +6,7 @@ const operate = require(path.resolve('common/dbOperate'))
 
 //  查询用户列表
 router.get('/customerList',async function(req, res, next) {
-    let page = req.query.page,
-        pageSize = req.query.pageSize,
-        keyword = req.query.keyword
+    let {page = 1, pageSize = 10, keyword = ''} = req.query,
         data = {
             dataList: [],
             total: 0
@@ -32,11 +30,13 @@ router.get('/customerList',async function(req, res, next) {
 
 //  查询用户发布列表
 router.get('/pushList',async function(req, res, next) {
-    let userId = req.query.userId
+    let userId = req.query.userId,
+    data = {}
     operate.searchOne(userId,'userId','publishlist').then((result) => {
         if(result.length > 0) {
             let msg = "查询成功"
             data.dataList = result
+            console.log('data',data)
             util.RESJSON(req, res, next, 200, msg, data)
         }else {
             let msg = "暂无数据"

@@ -6,9 +6,7 @@ const operate = require(path.resolve('common/dbOperate'))
 const gameModule = require(path.resolve('module/game'))
 //  查询
 router.get('/gameList',async function(req, res, next) {
-    let page = req.query.page,
-        pageSize = req.query.pageSize,
-        keyword = req.query.keyword
+    let {page = 1, pageSize = 10, keyword = ''} = req.query,
         data = {
             dataList: [],
             total: 0

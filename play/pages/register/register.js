@@ -33,7 +33,7 @@ Page({
     if(!this.data.username && !this.data.password) {
       wx.showToast({
         title: '账号或密码为空',
-        image: '/images/error.png',
+        image: '../../images/error.png',
         duration: 1500
       })
       return
@@ -60,7 +60,7 @@ Page({
       }else {
         wx.showToast({
           title: '该账号已被注册',
-          image:'/images/error.png',
+          image:'../../images/error.png',
           duration:2000,
           success:() => {
             this.setData({

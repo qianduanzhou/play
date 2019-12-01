@@ -1,5 +1,5 @@
 <view class='container column'>
-  <image class='user-pic' src="/images/game.png"></image>
+  <image class='user-pic' src="http://localhost:3000/images/game.png"></image>
   <text class='register-title'>欢迎来到一起玩</text>
   <view class='register-input-container'>
     <input placeholder='账号' type='text' class='username user-input' bindinput='changeUser' value='{{username}}' focus='true'></input>

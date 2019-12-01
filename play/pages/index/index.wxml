@@ -15,19 +15,19 @@
   </view>
   </game-item>
   <swiper indicator-dots="true"  autoplay="true" interval="5000" duration="1000" circular="true">
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{item}}">
       <swiper-item>
         <image mode='aspectFill' src="{{item}}" class="slide-image" height="200" style='width:100%;'/>
       </swiper-item>
     </block>
   </swiper>
   <view class='recommend'>
-    <image class='recommend-border' src='/images/border.png'></image>
+    <image class='recommend-border' src='http://localhost:3000/images/border.png'></image>
     <text class='recommend-title'>推荐</text>
     <text class='iconfont icon-huanyihuan' bindtap='changeRec'></text>
   </view>
   <view class='recommend-container'>
-    <view class='recommend-item all-center' wx:for="{{recommendList}}" bindtap='toUserDetail' data-id='{{item.id}}'>
+    <view class='recommend-item all-center' wx:for="{{recommendList}}"  wx:key="{{item.id}}" bindtap='toUserDetail' data-id='{{item.id}}'>
       <image class='recommend-item-pic' lazy-load="true" src="{{item.userPic}}"></image>
     </view>
   </view>

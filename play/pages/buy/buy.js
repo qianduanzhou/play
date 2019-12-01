@@ -1,5 +1,6 @@
 const app = getApp()
 const api = require('../../common/api.js')
+const sendkv = require('../../common/sendkv.js')
 Page({
   data: {
     time: '12:01',
@@ -51,21 +52,23 @@ Page({
       enterpriseId = this.data.detail.publishDetail.userId,
       publishId = this.data.detail.publishDetail.id,
       game = this.data.detail.publishDetail.game,
+      gameId = this.data.detail.publishDetail.gameId,
       number = this.data.number,
       money = this.data.money,
       remarks = this.data.remarks,
       time = this.data.time,
       buyTime = new Date().getTime()
     let data = {
-      userId: userId,
-      enterpriseId: enterpriseId,
-      publishId: publishId,
-      game: game,
-      number: number,
-      money: money,
+      userId,
+      enterpriseId,
+      publishId,
+      gameId,
+      game,
+      number,
+      money,
       remarks: remarks ? remarks : "无",
-      time: time,
-      buyTime: buyTime
+      time,
+      buyTime
     }
     console.log(buyTime)
     wx.showModal({
@@ -75,6 +78,12 @@ Page({
         if (res.confirm) {
           api.request(api.buy,data,"post").then((res) => {
             if(res.code == 200) {
+              sendkv({
+                reportKey: 90074,
+                page: 'buy',
+                gameId: data.gameId,
+                opType: 1
+              })
               app.checkLogin()
               app.getStore()
               wx.redirectTo({
@@ -83,7 +92,7 @@ Page({
             }else if(res.code == 404) {
               wx.showToast({
                 title: '余额不足',
-                image:'/images/error.png',
+                image:'../../images/error.png',
                 duration:1500
               })
             }

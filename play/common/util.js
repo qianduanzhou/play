@@ -95,12 +95,41 @@ function debounce(method, delay) {
   }
 }
 
+function isPainObject(obj) {
+  // 区分数组和对象的情况
+  return Object.prototype.toString.call(obj) === '[object Object]';
+}
+
+/**
+ * string => array[]
+ * @param str
+ * @returns {Array}
+ */
+function stringToBytes(str) {
+  let ch;
+  let st;
+  let re = [];
+  for (let i = 0; i < str.length; i++) {
+    ch = str.charCodeAt(i); // get char
+    st = []; // set up "stack"
+    do {
+      st.push(ch & 0xFF); // push byte to stack
+      ch = ch >> 8; // shift value down by 1 byte
+    }
+    while (ch);
+    re = re.concat(st.reverse());
+  }
+  return re;
+}
+
 module.exports = {
-  formatList: formatList,
-  getName: getName,
-  fleshPre: fleshPre,
-  sortUp: sortUp,
-  sortDown: sortDown,
-  shuffle: shuffle,
-  debounce: debounce
+  formatList,
+  getName,
+  fleshPre,
+  sortUp,
+  sortDown,
+  shuffle,
+  debounce,
+  isPainObject,
+  stringToBytes
 }

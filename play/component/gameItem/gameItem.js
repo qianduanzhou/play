@@ -1,4 +1,5 @@
 // component/gameItem.js
+const sendkv = require('../../common/sendkv.js')
 Component({
   /**
    * 组件的属性列表
@@ -47,8 +48,13 @@ Component({
    */
   methods: {
     toOtherPublish(e) {
+      sendkv({
+        reportKey: 90073,
+        page: 'otherPublish',
+        gameId: e.currentTarget.dataset.id
+      })
       wx.navigateTo({
-        url: `/pages/otherPublish/otherPublish?name=${e.currentTarget.dataset.name}`,
+        url: `/pages/otherPublish/otherPublish?name=${e.currentTarget.dataset.name}&gameId=${e.currentTarget.dataset.id}`,
       })
     }
   }

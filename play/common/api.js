@@ -57,6 +57,8 @@ let searchOne = "search/searchOne"
 let getFound = 'game/found'
 let getFoundDetial = 'game/foundDetail'
 
+let dataReport = 'report/dataReport'
+
 function request(api, data = {}, method="get") {
   return new Promise((resolve,reject) => {
     wx.request({
@@ -135,5 +137,6 @@ module.exports = {
   searchAll,
   searchOne,
   getFound,
-  getFoundDetial
+  getFoundDetial,
+  dataReport
 }

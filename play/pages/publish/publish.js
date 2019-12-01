@@ -14,7 +14,7 @@ Page({
     list5: [],
     userInfo: [],
     introduction: '', 
-    multiArray: [['手游', '端游', '娱乐', '心理咨询', '文艺生活'], ['王者荣耀', '和平精英', '第五人格', 'QQ飞车', '球球大作战'], ["倔强青铜", "秩序白银", "荣耀黄金", "尊贵铂金", "永恒钻石", "至尊星耀", "最强王者","荣耀王者"]],
+    multiArray: [['手游', '端游', '娱乐', '心理咨询', '文艺生活'], [], []],
     multiArray1: [['每局', '每小时'], ['5币', '10币', '15币', '20币', '30币']],
     multiIndex: [0, 0, 0],
     multiIndex1: [0, 0]
@@ -110,12 +110,19 @@ Page({
   init() {
     api.request(api.getAllGame).then((res) => {
       let list = util.formatList(res.data)
+      console.log('list.list1', list.list1)
+      list.list1.forEach((item) => {
+        this.data.multiArray[1].push(item.name)
+        
+      })
+      this._getLevel(list.list1[0].name)
       this.setData({
         list1: list.list1,
         list2: list.list2,
         list3: list.list3,
         list4: list.list4,
-        list5: list.list5
+        list5: list.list5,
+        multiArray: this.data.multiArray
       })
     })
   },
@@ -179,7 +186,6 @@ Page({
     api.request(api.searchOneGameLevel,{
       name:name
     },"post").then((res) => {
-
       this.data.multiArray[2] = util.getName(res.data)
       this.setData({
         multiArray: this.data.multiArray

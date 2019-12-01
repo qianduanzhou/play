@@ -24,11 +24,13 @@ Component({
     toDetail(e) {
       if (this.properties.imageType == "game") {
         let game = e.currentTarget.dataset.name
+        let gameId = e.currentTarget.dataset.gameid
         wx.navigateTo({
-          url: `/pages/publishedDetail/publishedDetail?game=${game}`
+          url: `/pages/publishedDetail/publishedDetail?game=${game}&gameId=${gameId}`
         })
       } else if(this.properties.imageType == "user") {
         let game = e.currentTarget.dataset.name
+        let gameId = e.currentTarget.dataset.gameid
         let userId = e.currentTarget.dataset.userid
         let data = {
           userId : app.data.userInfo.id,
@@ -53,7 +55,7 @@ Component({
           }
         })
         wx.navigateTo({
-          url: `/pages/otherUserDetail/otherUserDetail?game=${game}&userId=${userId}`
+          url: `/pages/otherUserDetail/otherUserDetail?game=${game}&gameId=${gameId}&userId=${userId}`
         })
       }
     }

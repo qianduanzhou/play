@@ -92,7 +92,7 @@
 }
 .other-user-detail-order {
   position: fixed;
-  bottom: 0;
+  bottom: 20rpx;
   width: 80%;
   text-align: center;
   left: 50%;

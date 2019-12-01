@@ -18,11 +18,12 @@ Page({
     this.checkConcern()
   },
   init(options) {
+    console.log('options', options)
     wx.showLoading({
       title: '加载中',
     })
     let data = {
-      game : options.game,
+      gameId: options.gameId,
       userId : options.userId
     }
     api.request(api.publishInfo, data).then((res) => {

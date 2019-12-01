@@ -20,7 +20,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    this.init(options.game)
+    this.init(options.gameId)
   },
   bindPickerChange: function (e) {
     this.setData({
@@ -65,7 +65,7 @@ Page({
   },
   init(name) {
     let data = {
-      name: name,
+      gameId: gameId,
       userId: app.data.userInfo.id
     }
     api.request(api.publishedDetail, data).then((res) => {

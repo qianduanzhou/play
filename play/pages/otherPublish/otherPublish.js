@@ -9,6 +9,7 @@ Page({
   data: {
     checked:'no',
     publishList:[],
+    gameId: '',
     level: [],
     index: 0
   },
@@ -16,6 +17,9 @@ Page({
   onLoad: function (options) {
     this.levelList = []
     this.priceList = []
+    this.setData({
+      gameId : options.gameId
+    })
     this.init(options.name)
   },
   init(name) {
@@ -23,7 +27,7 @@ Page({
       title: '加载中',
     })
     api.request(api.searchPublish,{
-      name: name,
+      gameId: this.data.gameId,
       userId: app.data.userInfo.id
     }).then((res) => {
       this.levelList = res.data[1].slice(0)

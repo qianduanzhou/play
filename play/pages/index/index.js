@@ -3,24 +3,38 @@
 const app = getApp()
 const api = require('../../common/api.js')
 const util = require('../../common/util.js')
-
+const sendkv = require('../../common/sendkv.js')
 Page({
   data: {
     hotGameList:[],
     recommendList:[],
     keys:"",
     imgUrls: [
-      'http://192.168.1.105:3000/public/images/swiper1.jpg',
-      'http://192.168.1.105:3000/public/images/swiper2.jpg',
-      'http://192.168.1.105:3000/public/images/swiper3.jpg',
-      'http://192.168.1.105:3000/public/images/swiper4.jpg',
-      'http://192.168.1.105:3000/public/images/swiper5.jpg',
+      'http://localhost:3000/public/images/swiper1.jpg',
+      'http://localhost:3000/public/images/swiper2.jpg',
+      'http://localhost:3000/public/images/swiper3.jpg',
+      'http://localhost:3000/public/images/swiper4.jpg',
+      'http://localhost:3000/public/images/swiper5.jpg',
     ]
   },
   onLoad: function () {
+    sendkv({
+      reportKey: 90073,
+      page: 'index'
+    })
     this.list = []
     this.getHotGame()
     this.initRecommend()
+  },
+  onShow() {
+    wx.getStorage({
+      key: 'userInfo',
+      fail: (res) => {
+        wx.switchTab({
+          url: '/pages/personal/personal',
+        })
+      }
+    })
   },
   getHotGame() {
     wx.showLoading({

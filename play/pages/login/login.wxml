@@ -1,5 +1,5 @@
 <view class='container column'>
-  <image class='user-pic' src="/images/game.png"></image>
+  <image class='user-pic' src="http://localhost:3000/public/images/game.png"></image>
   <text class='login-title'>欢迎来到一起玩</text>
   <view class='login-input-container'>
     <input placeholder='账号' type='text' class='username user-input' bindinput='changeUser' value='{{username}}' focus='true'></input>
@@ -11,7 +11,7 @@
   </view> 
   <view class='login' bindtap='login'>登录</view>
   <view class='wx-login' bindtap='wxLogin'>
-    <image src="/images/wx.png" class='wx-logo'></image>
+    <image src="http://localhost:3000/public/images/wx.png" class='wx-logo'></image>
     <text class='wx-title'>微信</text>
   </view>
 </view>

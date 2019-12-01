@@ -1,5 +1,5 @@
 <view class='container column'>
-  <view class='published-item' wx:for="{{list}}" bindtap='toDetail' data-name='{{item.game}}' data-userid='{{item.userInfo.id}}'>
+  <view class='published-item' wx:for="{{list}}" bindtap='toDetail' data-name='{{item.game}}' data-gameId='{{item.gameId}}' data-userid='{{item.userInfo.id}}'>
     <image class='published-item-pic' src="{{item.gameDetail.picUrl}}" wx:if="{{imageType == 'game' || imageType == 'order'}}"></image>
     <image class='published-item-pic' src="{{item.userInfo.userPic}}" wx:if="{{imageType == 'user' || imageType == 'footmark' || imageType == 'custom'}}"></image>
     <view class='published-item-detail justify-spc'>

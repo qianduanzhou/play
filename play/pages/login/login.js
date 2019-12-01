@@ -38,7 +38,7 @@ Page({
     if (!this.data.username && !this.data.password) {
       wx.showToast({
         title: '账号或密码为空',
-        image: '/images/error.png',
+        image: '../../images/error.png',
         duration: 1500
       })
       return
@@ -63,7 +63,7 @@ Page({
       }else if(res.code == 404){
         wx.showToast({
           title: '账号或密码错误',
-          image:"/images/error.png",
+          image:"../../images/error.png",
           duration:1500
         })
       }
@@ -72,15 +72,17 @@ Page({
   wxLogin(e) {
     wx.login({
       success(res) {
+        console.log('wxLogin', res)
         if(res.code) {
           wx.getUserInfo({
             withCredentials:true,
             success(res_user) {
+              console.log('res_user', res_user)
               wx.request({
                 url: 'https://api.weixin.qq.com/sns/jscode2session',
                 data: {
                   appid: "wx04972a9c0769de54",
-                  secret:"82f30f6bdf2159a73fd9193302b12301",
+                  secret:"f5c075c189de7eb0bb327d400fec2dc9",
                   js_code:res.code,
                   grant_type: "authorization_code"
                 },
@@ -89,6 +91,7 @@ Page({
                   'content-type': 'application/json'
                 },
                 success(res_login) {
+                  console.log('res_login', res_login)
                   wx.setStorage({
                     key: 'wxInfo',
                     data: {

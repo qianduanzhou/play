@@ -1,5 +1,6 @@
 const db = require('../config/db');
 
+//  查询符合单一条件
 let searchOne = (data,sqlKey,dataTable) => {
     return new Promise((resolve,reject) => {
         db.query(`select * from ${dataTable} where ${sqlKey}='${data}'`,[],(err,result,fields) => {
@@ -11,6 +12,21 @@ let searchOne = (data,sqlKey,dataTable) => {
         })
     })
 }
+
+//  查询符合单一条件且去重
+let searchOneDistinct = (data,sqlKey,distinct,dataTable) => {
+    return new Promise((resolve,reject) => {
+        db.query(`select distinct ${distinct} from ${dataTable} where ${sqlKey}='${data}'`,[],(err,result,fields) => {
+            if(err) {
+                reject(err)
+            }else {
+                resolve(result)
+            }
+        })
+    })
+}
+
+
 //  查询全部数据
 let searchAll = (dataTable) => {
     return new Promise((resolve,reject) => {
@@ -107,6 +123,7 @@ let updateOne = (data,dataKey,dataTable,condition,condKey) => {
 
 module.exports = {
     searchOne,
+    searchOneDistinct,
     searchAll,
     searchAllLimit,
     searchAllCount,

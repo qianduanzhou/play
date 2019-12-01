@@ -36,7 +36,8 @@ router.post('/login',function (req, res, next) {
 router.post('/register', function(req, res, next) {
     let dataObj = {
         username: req.body.username,
-        password : req.body.password
+        password: req.body.password,
+        updateTime: new Date().getTime()
     }
     operate.searchOne(req.body.username,'username','user_manage').then((result) => {
         console.log(result)

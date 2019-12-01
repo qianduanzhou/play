@@ -5,7 +5,7 @@ const utils = require('../common/util')
 let insertOnePublish = (data) => {
     data = utils.formatData(data)
     return new Promise((resolve,reject) => {
-        db.query('insert into publishList (userId,game,gameType,level,moneyType,moneyNum,introduction,updateTime) values (?,?,?,?,?,?,?,?)',[...data],(err,result,fields) => {
+        db.query('insert into publishList (userId,game,gameType,level,moneyType,moneyNum,introduction,updateTime,gameId) values (?,?,?,?,?,?,?,?,?)',[...data],(err,result,fields) => {
             if(err) {
                 reject(err)
             }else {
@@ -18,10 +18,10 @@ let insertOnePublish = (data) => {
 
 let searchOne = (data) => {
     let userId = data.userId,
-        game = data.game
+        gameId = data.gameId
         console.log(data)
     return new Promise((resolve,reject) => {
-        db.query(`select * from publishList where userId=${userId} and game='${game}'`,[],(err,result,fields) => {
+        db.query(`select * from publishList where userId=${userId} and gameId='${gameId}'`,[],(err,result,fields) => {
             if(err) {
                 reject(err)
             }else {

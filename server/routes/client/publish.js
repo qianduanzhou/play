@@ -7,9 +7,12 @@ const publish = require(path.resolve('module/publish'))
 
 
 //  发布一起玩游戏
-router.post('/push',function (req,res,next) {
+router.post('/push',async function (req,res,next) {
 
     let data = req.body
+    await operate.searchOne(req.body.game,'name','game').then((result) => {
+        data.gameId = result[0].id
+    })
     publish.searchAll(data.userId,'userId').then((result) => {
         if(result.length == 0) {
             insertOnePublish(data,req, res, next)
@@ -50,7 +53,7 @@ router.get('/published',function (req,res,next) {
 //  获取已发布游戏详情
 router.get('/publishedDetail',async function (req,res,next) {
     let userId = req.query.userId,
-        name = req.query.name,
+        gameId = req.query.gameId,
         data = {}
     await operate.searchOne(userId,'userId',"publishList").then((result) => {
         result.forEach(item => {
@@ -59,10 +62,10 @@ router.get('/publishedDetail',async function (req,res,next) {
             }
         });
     })
-    await operate.searchOne(name,'name',"game").then((result) => {
+    await operate.searchOne(gameId,'id',"game").then((result) => {
         data.gameDetail = result[0]
     })
-    await operate.searchOne(name,'gameName',"level").then((result) => {
+    await operate.searchOne(gameId,'gameId',"level").then((result) => {
         data.gameLevel = result
     })
     util.RESJSON(req, res, next, 200,'success',data)
@@ -89,10 +92,10 @@ router.post('/delete',function (req,res,next) {
 //  获取当前游戏已发布的用户及信息
 router.get('/searchPublish',async function (req, res, next) {
     let list = []
-    await operate.searchOne(req.query.name,'gameName','level').then((result) => {
+    await operate.searchOne(req.query.gameId,'gameId','level').then((result) => {
             list.push(result)
     })
-    await operate.searchOne(req.query.name,'game',"publishList").then(async (result) => {
+    await operate.searchOne(req.query.gameId,'gameId',"publishList").then(async (result) => {
         for(let i = 0; i < result.length; i ++) {
             await operate.searchOne(result[i].userId,'id','user').then((result2) => {
                 result[i].userInfo = result2[0]
@@ -121,7 +124,7 @@ router.get('/publishInfo',async function (req, res, next) {
     await operate.searchOne(req.query.userId,"id","user").then((result) => {
         data.userInfo = result[0]
     })
-    await operate.searchOne(req.query.game,"name","game").then((result) => {
+    await operate.searchOne(req.query.gameId,"id","game").then((result) => {
         data.gameDetail = result[0]
     })
     util.RESJSON(req, res, next, 200,'success',data)

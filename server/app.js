@@ -15,6 +15,7 @@ const orderRouter = require('./routes/client/order');
 const footmarkRouter = require('./routes/client/footmark');
 const concernRouter = require('./routes/client/concern');
 const searchRouter = require('./routes/client/search')
+const reportRouter = require('./routes/client/report')
 
 
 //  后台
@@ -22,6 +23,7 @@ const userManageRouter = require('./routes/server/user_manage');
 const customerManageRouter = require('./routes/server/customer_manage');
 const gameManageRouter = require('./routes/server/game_manage');
 const orderManageRouter = require('./routes/server/order_manage');
+const reportManageRouter = require('./routes/server/report_manage');
 
 //  公用
 const upload = require('./routes/upload.js')
@@ -45,24 +47,24 @@ app.get('/public/images/*', function (req, res) {
 })
 
 
-// app.use(function(req, res, next) {
-//   console.log(req.url)
-//   // 我这里知识把登陆和注册请求去掉了，其他的多有请求都需要进行token校验 
-//   if (req.url.includes('Manage') && req.url != '/userManage/login') {
-//       let token = req.headers.token;
-//       let jwt = new JwtUtil(token);
-//       let result = jwt.verifyToken();
-//       // 如果考验通过就next，否则就返回登陆信息不正确
-//       if (result == 'err') {
-//           console.log(result);
-//           res.send({code: 403, msg: '登录已过期,请重新登录'});
-//       } else {
-//           next();
-//       }
-//   } else {
-//       next();
-//   }
-// });
+app.use(function(req, res, next) {
+  console.log(req.url)
+  // 我这里知识把登陆和注册请求去掉了，其他的多有请求都需要进行token校验 
+  if (req.url.includes('Manage') && req.url != '/userManage/login') {
+      let token = req.headers.token;
+      let jwt = new JwtUtil(token);
+      let result = jwt.verifyToken();
+      // 如果考验通过就next，否则就返回登陆信息不正确
+      if (result == 'err') {
+          console.log(result);
+          res.send({code: 403, msg: '登录已过期,请重新登录'});
+      } else {
+          next();
+      }
+  } else {
+      next();
+  }
+});
 
 app.use('/', indexRouter);
 app.use('/game', gameRouter);
@@ -72,11 +74,14 @@ app.use('/order', orderRouter);
 app.use('/footmark', footmarkRouter);
 app.use('/concern', concernRouter);
 app.use('/search', searchRouter);
+app.use('/report', reportRouter)
+
 
 app.use('/userManage', userManageRouter);
 app.use('/customerManage', customerManageRouter);
 app.use('/gameManage', gameManageRouter);
 app.use('/orderManage', orderManageRouter);
+app.use('/reportManage', reportManageRouter)
 
 app.use('/upload', upload);
 // catch 404 and forward to error handler

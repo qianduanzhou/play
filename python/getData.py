@@ -8,7 +8,7 @@ from lxml import etree
 conn = pymysql.connect(
     host="localhost",
     user="root",
-    password="root",
+    password="123456",
     database="play",
     charset="utf8")
 

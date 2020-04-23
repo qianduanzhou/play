@@ -24,4 +24,4 @@
 
 ### 基本功能动态演示
 
-- ![演示](https://github.com/qianduanzhou/play/blob/master/play/images/play.gif)
+- ![演示](https://github.com/qianduanzhou/play/blob/master/image/excel%E8%A1%A8.PNG)

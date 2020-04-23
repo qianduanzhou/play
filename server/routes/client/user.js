@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
   //文件存储位置  
   destination: (req, file, cb) => {  
     // cb(null, path.resolve(__dirname, '../../play/images/'));  
-    cb(null, path.resolve(__dirname, '../public/images'));  
+    cb(null, path.resolve(__dirname, path.join('../../public/images')));  
   },  
   //文件名  
   filename: (req, file, cb) => {  
@@ -119,6 +119,7 @@ router.post('/uploadFile',function (req,res,next) {
     let upload = multer(uploadCfg).any();  
   upload(req, res, async (err) => {  
     if (err) {  
+        console.log(err)
         util.RESJSON(req, res, next, 500, 'error')
         return;  
     };   

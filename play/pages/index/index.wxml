@@ -22,7 +22,7 @@
     </block>
   </swiper>
   <view class='recommend'>
-    <image class='recommend-border' src='http://localhost:3000/images/border.png'></image>
+    <image class='recommend-border' src='http://192.168.1.106:3000/images/border.png'></image>
     <text class='recommend-title'>推荐</text>
     <text class='iconfont icon-huanyihuan' bindtap='changeRec'></text>
   </view>

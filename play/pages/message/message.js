@@ -10,7 +10,8 @@ Page({
   data: {
     messageList:[]
   },
-  onLoad: function (options) {
+  onShow: function (options) {
+    console.log(123123)
     api.request(api.getMessage,{
       userId:app.data.userInfo.id
     }).then((res) => {

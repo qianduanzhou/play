@@ -70,71 +70,62 @@ Page({
     })
   },
   wxLogin(e) {
-    wx.login({
+    console.log('wxLogin',e)
+    let data = e.detail
+    if (data.errMsg == "getUserInfo:ok") {
+      console.log('userInfo', data.rawData)
+      let userInfo = JSON.parse(data.rawData)
+      wx.login({
       success(res) {
         console.log('wxLogin', res)
         if(res.code) {
-          wx.getUserInfo({
-            withCredentials:true,
-            success(res_user) {
-              console.log('res_user', res_user)
-              wx.request({
-                url: 'https://api.weixin.qq.com/sns/jscode2session',
+          wx.request({
+            url: 'https://api.weixin.qq.com/sns/jscode2session',
+            data: {
+              appid: "wx04972a9c0769de54",
+              secret:"f5c075c189de7eb0bb327d400fec2dc9",
+              js_code:res.code,
+              grant_type: "authorization_code"
+            },
+            method:"GET",
+            header: {
+              'content-type': 'application/json'
+            },
+            success(res_login) {
+              console.log('res_login', res_login)
+              wx.setStorage({
+                key: 'wxInfo',
                 data: {
-                  appid: "wx04972a9c0769de54",
-                  secret:"f5c075c189de7eb0bb327d400fec2dc9",
-                  js_code:res.code,
-                  grant_type: "authorization_code"
-                },
-                method:"GET",
-                header: {
-                  'content-type': 'application/json'
-                },
-                success(res_login) {
-                  console.log('res_login', res_login)
-                  wx.setStorage({
-                    key: 'wxInfo',
-                    data: {
-                      sessionKey: res_login.data.session_key,
-                      openid: res_login.data.openid
-                    }
-                  })
-                  let data = {
-                    appId: "wx04972a9c0769de54",
-                    sessionKey: res_login.data.session_key,
-                    encryptedData: res_user.encryptedData,
-                    iv: res_user.iv
-                  }
-                  api.request(api.wxGetInfo,data,"post").then((result) => {
-                    if(result.code == 200) {
-                      let data = {
-                        username: result.data.watermark.appid,
-                        password:result.data.watermark.appid,
-                        nickname: result.data.nickName,
-                        userPic: result.data.avatarUrl,
-                        sex: result.data.gender,
-                        age:22
-                      }
-                      api.request(api.wxLogin,data,"post").then((user) => {
-                        wx.setStorage({
-                          key: 'userInfo',
-                          data: user.data[0],
-                          success() {
-                            wx.switchTab({
-                              url: '/pages/index/index',
-                            })
-                            app.getStore()
-                          }
-                        })
-                      })
-                    }  
-                  })
+                  sessionKey: res_login.data.session_key,
+                  openid: res_login.data.openid
                 }
+              })
+              let data = {
+                username: res_login.data.openid,
+                password: res_login.data.openid,
+                nickname: userInfo.nickName,
+                userPic: userInfo.avatarUrl,
+                sex: userInfo.gender,
+                age:22
+              }
+              api.request(api.wxLogin,data,"post").then((user) => {
+                console.log('user', user)
+                wx.setStorage({
+                  key: 'userInfo',
+                  data: user.data[0],
+                  success() {
+                    wx.switchTab({
+                      url: '/pages/index/index',
+                    })
+                    app.getStore()
+                  }
+                })
               })
             }
           })
         }
       }
     })
+    }
   }
 })

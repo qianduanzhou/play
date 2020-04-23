@@ -11,9 +11,14 @@ Page({
     money:10,
     model:false
   },
-  onShow: function (options) {
+  onShow: async function (options) {
     this.setData({
       userInfo:app.data.userInfo
+    })
+    console.log('app.data.userInfo', app.data.userInfo)
+    await app.checkLogin()
+    this.setData({
+      userInfo: app.data.userInfo
     })
   },
   login() {

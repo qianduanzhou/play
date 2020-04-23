@@ -10,11 +10,11 @@ Page({
     recommendList:[],
     keys:"",
     imgUrls: [
-      'http://localhost:3000/public/images/swiper1.jpg',
-      'http://localhost:3000/public/images/swiper2.jpg',
-      'http://localhost:3000/public/images/swiper3.jpg',
-      'http://localhost:3000/public/images/swiper4.jpg',
-      'http://localhost:3000/public/images/swiper5.jpg',
+      'http://192.168.1.106:3000/public/images/swiper1.jpg',
+      'http://192.168.1.106:3000/public/images/swiper2.jpg',
+      'http://192.168.1.106:3000/public/images/swiper3.jpg',
+      'http://192.168.1.106:3000/public/images/swiper4.jpg',
+      'http://192.168.1.106:3000/public/images/swiper5.jpg',
     ]
   },
   onLoad: function () {
@@ -27,14 +27,6 @@ Page({
     this.initRecommend()
   },
   onShow() {
-    wx.getStorage({
-      key: 'userInfo',
-      fail: (res) => {
-        wx.switchTab({
-          url: '/pages/personal/personal',
-        })
-      }
-    })
   },
   getHotGame() {
     wx.showLoading({

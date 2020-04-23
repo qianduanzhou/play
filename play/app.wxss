@@ -1,5 +1,5 @@
 page {
-  background: rgba(33,33,33,0.1);
+  background: #F1F1F2;
 }
 .column {
   display: flex;

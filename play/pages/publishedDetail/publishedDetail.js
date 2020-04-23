@@ -19,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log('options',options)
     this.init(options.gameId)
   },
   bindPickerChange: function (e) {
@@ -63,7 +63,7 @@ Page({
       introduction: ''
     })
   },
-  init(name) {
+  init(gameId) {
     let data = {
       gameId: gameId,
       userId: app.data.userInfo.id

@@ -1,8 +1,8 @@
 // 本地url
-let url = "http://localhost:3000/"
+// let url = "http://localhost:3000/"
 
 // 手机调试url：根据自己电脑ip设置（自行百度查ip方法）
-// let url = "http://192.168.0.105:3000/"
+let url = "http://192.168.1.106:3000/"
 
 //  阿里云url
 // let url = "http://47.102.220.59:3200/"
@@ -83,12 +83,14 @@ function chooseImage() {
       sourceType: ['album', 'camera'],
       success: (res) => {
         var tempFilePaths = res.tempFilePaths
+        console.log('res',res)
         wx.uploadFile({
           url: url+'user/uploadFile',
           filePath: tempFilePaths[0],
           name: 'file',
           success: (result) => {
             let imgData = JSON.parse(result.data)
+            console.log('result',result)
             resolve(imgData)
           }
         })

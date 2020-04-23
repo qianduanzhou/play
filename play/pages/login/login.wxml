@@ -1,5 +1,5 @@
 <view class='container column'>
-  <image class='user-pic' src="http://localhost:3000/public/images/game.png"></image>
+  <image class='user-pic' src="http://192.168.1.106:3000/public/images/game.png"></image>
   <text class='login-title'>欢迎来到一起玩</text>
   <view class='login-input-container'>
     <input placeholder='账号' type='text' class='username user-input' bindinput='changeUser' value='{{username}}' focus='true'></input>
@@ -10,8 +10,8 @@
   <text class='pass-clear' wx:if="{{password}}" bindtap='clearPass'>×</text>
   </view> 
   <view class='login' bindtap='login'>登录</view>
-  <view class='wx-login' bindtap='wxLogin'>
-    <image src="http://localhost:3000/public/images/wx.png" class='wx-logo'></image>
+  <button class='wx-login' open-type="getUserInfo" bindgetuserinfo="wxLogin">
+    <image src="http://192.168.1.106:3000/public/images/wx.png" class='wx-logo'></image>
     <text class='wx-title'>微信</text>
-  </view>
+  </button>
 </view>

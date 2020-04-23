@@ -48,6 +48,13 @@ Page({
     })
   },
   buy() {
+    let userInfo = wx.getStorageSync('userInfo')
+    if (!userInfo) {
+      wx.switchTab({
+        url: '/pages/personal/personal',
+      })
+      return
+    }
     let userId = app.data.userInfo.id,
       enterpriseId = this.data.detail.publishDetail.userId,
       publishId = this.data.detail.publishDetail.id,

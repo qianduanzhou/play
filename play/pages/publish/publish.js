@@ -134,43 +134,43 @@ Page({
       moneyNum = this.data.multiArray1[1][this.data.multiIndex1[1]],
       introduction = this.data.introduction,
       updateTime = new Date().getTime()
-  let data = {
-    userId:this.data.userInfo.id,
-    game: gameName,
-    gameType: gameType,
-    level: level,
-    moneyType: moneyType,
-    moneyNum: moneyNum,
-    introduction: introduction,
-    updateTime: updateTime
-  }
-  console.log(data)
-  api.request(api.publish,data,"post").then((res) => {
-    if(res.code == 200) {
-      wx.showToast({
-        title: '发布成功',
-        duration:500,
-        success:()=> {
-          wx.navigateTo({
-            url: '/pages/published/published',
-          })
-        }
-      })
-    }else {
-      wx.showModal({
-        title: '提示',
-        content: '该类型已发布，请前往个人发布取消该发布类型',
-        success(res) {
-          if (res.confirm) {
-            console.log(res.confirm)
+    let data = {
+      userId:this.data.userInfo.id,
+      game: gameName,
+      gameType: gameType,
+      level: level,
+      moneyType: moneyType,
+      moneyNum: moneyNum,
+      introduction: introduction,
+      updateTime: updateTime
+    }
+    console.log(data)
+    api.request(api.publish,data,"post").then((res) => {
+      if(res.code == 200) {
+        wx.showToast({
+          title: '发布成功',
+          duration:500,
+          success:()=> {
             wx.navigateTo({
               url: '/pages/published/published',
             })
           }
-        }
-      })
-    }
-  })
+        })
+      }else {
+        wx.showModal({
+          title: '提示',
+          content: '该类型已发布，请前往个人发布取消该发布类型',
+          success(res) {
+            if (res.confirm) {
+              console.log(res.confirm)
+              wx.navigateTo({
+                url: '/pages/published/published',
+              })
+            }
+          }
+        })
+      }
+    })
   },
   input(e) {
     this.setData({

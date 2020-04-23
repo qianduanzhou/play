@@ -102,6 +102,7 @@ Page({
     })
   },
   chooseImage() {
+    console.log('123123')
     api.chooseImage().then((res) => {
       if (res.code == 200) {
         this.setData({

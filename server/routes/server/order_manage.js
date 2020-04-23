@@ -35,7 +35,9 @@ router.get('/orderList',async function(req, res, next) {
             data.dataList = result
             let {dataList} = data
             for(let i = 0;i < dataList.length; i ++) {
+                console.log('dataList[i].userId',dataList[i].userId)
                 await operate.searchOne(dataList[i].userId,'id','user').then((result) => {
+                    console.log('result',result)
                     dataList[i].userName = result[0].username
                 })
                 await operate.searchOne(dataList[i].enterpriseId,'id','user').then((result) => {

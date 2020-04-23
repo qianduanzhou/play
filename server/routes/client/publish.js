@@ -8,7 +8,6 @@ const publish = require(path.resolve('module/publish'))
 
 //  发布一起玩游戏
 router.post('/push',async function (req,res,next) {
-
     let data = req.body
     await operate.searchOne(req.body.game,'name','game').then((result) => {
         data.gameId = result[0].id
@@ -56,16 +55,19 @@ router.get('/publishedDetail',async function (req,res,next) {
         gameId = req.query.gameId,
         data = {}
     await operate.searchOne(userId,'userId',"publishList").then((result) => {
-        result.forEach(item => {
-            if(item.game == name) {
+        result.some(item => {
+            if(item.gameId == gameId) {
                 data = item
+                return true
             }
         });
     })
     await operate.searchOne(gameId,'id',"game").then((result) => {
         data.gameDetail = result[0]
     })
+    console.log('gameId', gameId)
     await operate.searchOne(gameId,'gameId',"level").then((result) => {
+        console.log('result', result)
         data.gameLevel = result
     })
     util.RESJSON(req, res, next, 200,'success',data)

@@ -1,12 +1,12 @@
 <view class='container column'>
-  <image class='user-pic' src="http://localhost:3000/images/game.png"></image>
+  <image class='user-pic' src="http://192.168.1.106:3000/images/game.png"></image>
   <text class='register-title'>欢迎来到一起玩</text>
   <view class='register-input-container'>
-    <input placeholder='账号' type='text' class='username user-input' bindinput='changeUser' value='{{username}}' focus='true'></input>
+    <input placeholder='账号' type='text' class='username user-input' bindinput='changeUser' value='{{username}}'></input>
     <text class='user-clear' wx:if="{{username}}" bindtap='clearUser'>×</text>
   </view>
   <view class='register-input-container'>
-    <input placeholder='密码' type='passowrd' class='password user-input' bindinput='changePassword' value='{{password}}'></input>
+    <input placeholder='密码' type='text' password class='password user-input' bindinput='changePassword' value='{{password}}'></input>
   <text class='pass-clear' wx:if="{{password}}" bindtap='clearPass'>×</text>
   </view> 
   <view class='register' bindtap='register'>注册</view>

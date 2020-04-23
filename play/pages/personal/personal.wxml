@@ -1,5 +1,5 @@
-<view class='container column' wx:if="{{!userInfo.id}}">
-  <image class='logo' src="http://localhost:3000/images/game.png"></image>
+<view class='container column' wx:if="{{!userInfo.username}}">
+  <image class='logo' src="http://192.168.1.106:3000/images/game.png" bindtap="test"></image>
   <text class='personal-tip'>当前未登录，请选择</text>
   <view class='personal-operate'>
     <text class='personal-operate-item' bindtap='login'>登录</text>

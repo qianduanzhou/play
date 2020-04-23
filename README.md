@@ -15,16 +15,26 @@
 
 ![https://github.com/qianduanzhou/play/blob/master/image/%E6%88%91%E7%9A%84%EF%BC%88%E6%9C%AA%E7%99%BB%E5%BD%95%EF%BC%89.PNG](https://github.com/qianduanzhou/play/blob/master/image/我的（未登录）.PNG)
 
+![https://github.com/qianduanzhou/play/blob/master/image/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.PNG](https://github.com/qianduanzhou/play/blob/master/image/登录页面.PNG)
 
+### 2. 修改个人资料
 
-#### 2. 修改个人资料
+![https://github.com/qianduanzhou/play/blob/master/image/%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF.PNG](https://github.com/qianduanzhou/play/blob/master/image/用户信息.PNG)
 
-#### 3. 发布游戏（包括修改发布以及查看发布详情）
-#### 4. 购买（包括查看订单等）
-#### 5. 搜索（可根据游戏或者用户ID、昵称等查询相关用户）
+### 3. 发布游戏
+
+![https://github.com/qianduanzhou/play/blob/master/image/%E5%8F%91%E5%B8%83.PNG](https://github.com/qianduanzhou/play/blob/master/image/发布.PNG)
+
+### 4. 下单
+
+![下单](https://github.com/qianduanzhou/play/blob/master/image/下单.PNG)
+
+### 5. 搜索
+
+![搜用户](https://github.com/qianduanzhou/play/blob/master/image/搜索用户.PNG)
+
 #### 6. 用python的request和lxml爬取的游戏资讯
+
+![https://github.com/qianduanzhou/play/blob/master/image/%E5%8F%91%E7%8E%B0%E9%A1%B5.PNG](https://github.com/qianduanzhou/play/blob/master/image/发现页.PNG)
+
 #### 7. 其他一些小功能就不展示了
-
-### 基本功能动态演示
-
-- ![演示](https://github.com/qianduanzhou/play/blob/master/image/excel%E8%A1%A8.PNG)
